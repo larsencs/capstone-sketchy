@@ -1,4 +1,5 @@
-export const ClosedPost = ({post}) =>{
+export const ClosedPost = ({post, handleMakeChanges}) =>{
+
     return(
 
         <>
@@ -6,8 +7,8 @@ export const ClosedPost = ({post}) =>{
             <p>{post.description}</p>
             <p>{post.prompt.prompt}</p>
             <p>{post.emotion.emotion}</p>
-            <button>Make changes</button>
-            <button>Comments</button>
+            <button type="button" onClick={() =>handleMakeChanges()}>Make changes</button>
+            <button type="button" >Comments</button>
         </>
     )
 }

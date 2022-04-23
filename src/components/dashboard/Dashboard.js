@@ -4,9 +4,12 @@ import { ClosedPostList } from "../posts/ClosedPostList"
 import { OtherPostList } from "../posts/OtherPostList"
 import { getPosts } from "../modules/PostManager"
 import "../styles/dashboard/dashboard.css"
+import { useNavigate } from "react-router-dom"
 
 
 export const Dashboard = ({getLoggedInUser}) =>{
+
+    const navigate = useNavigate()
 
     const [post, updatePost] = useState([])
     
