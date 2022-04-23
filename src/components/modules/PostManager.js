@@ -40,7 +40,7 @@ export const deletePost = (postID) =>{
     }).then(res => res.json())
 }
 
-export const getPostById = (postObj) =>{
-    return fetch(`${dataURL}/posts/${postObj.id}`)
+export const getPostById = (postId) =>{
+    return fetch(`${dataURL}/posts/${postId}?_expand=prompt&_expand=emotion`)
         .then(res => res.json())
 }

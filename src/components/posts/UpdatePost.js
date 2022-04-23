@@ -17,13 +17,15 @@ export const UpdatePost = () =>{
 
         target[event.target.id] = event.target.value
         console.log(target)
+        console.log("post", post)
 
         updatePost(target)
 
     }
 
     const handleDeletePost = (event) =>{
-
+        deletePost(postId)
+            .then(navigate("/"))
     }
 
     const handleEditPost = () =>{
@@ -41,11 +43,11 @@ export const UpdatePost = () =>{
         <form>
             <fieldset>
                 
-                <input type="text" id="prompt" placeholder="chosen prompt"  disabled={true}></input>
-                <input type="text" id="mood" placeholder="mood" disabled={true}></input>
-                <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
-                <input type="text" id="image" placeholder="image" onChange={controlInput}></input>
-                <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
+                <input type="text" id="prompt" placeholder="chosen prompt"  disabled={true} value={post.prompt?.prompt}></input>
+                <input type="text" id="mood" placeholder="mood" disabled={true} value={post.emotion?.emotion}></input>
+                <input type="text" id="title" placeholder="title" onChange={controlInput} value={post.title}></input>
+                <input type="text" id="image" placeholder="image" onChange={controlInput} value={post.image}></input>
+                <input type="text" id="description" placeholder="description" onChange={controlInput} value={post.description}></input>
                 <button type="button" onClick={handleDeletePost}>Delete</button>
                 <button type="button" onClick={handleEditPost}>Submit</button>
             </fieldset>
