@@ -17,7 +17,7 @@ export const Dashboard = ({getLoggedInUser}) =>{
 
     return(
         <>
-            <div class="dashboard_main_container">
+            <div className="dashboard_main_container">
             <section className="prompts_section">
                 <OpenPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
             </section>

@@ -7,7 +7,7 @@ export const getPosts = () =>{
 }
 
 export const savePost = (postObj) =>{
-    return fetch(`${dataURL}/posts/${postObj.id}`,{
+    return fetch(`${dataURL}/posts/`,{
         method: "POST",
         headers:{
             "Content-Type" : "application/json"
