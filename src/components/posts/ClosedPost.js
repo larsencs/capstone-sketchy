@@ -1,4 +1,6 @@
-export const ClosedPost = ({post, handleMakeChanges}) =>{
+import { Link } from "react-router-dom"
+
+export const ClosedPost = ({post}) =>{
 
     return(
 
@@ -7,7 +9,7 @@ export const ClosedPost = ({post, handleMakeChanges}) =>{
             <p>{post.description}</p>
             <p>{post.prompt.prompt}</p>
             <p>{post.emotion.emotion}</p>
-            <button type="button" onClick={() =>handleMakeChanges()}>Make changes</button>
+            <Link to={`/${post.id}/update_post/`}><button type="button">Make changes</button></Link>
             <button type="button" >Comments</button>
         </>
     )

@@ -30,3 +30,17 @@ export const completePost = (postObj) =>{
         body: JSON.stringify(postObj)
     }).then( res => res.json())
 }
+
+export const deletePost = (postID) =>{
+    return fetch(`${dataURL}/posts/${postID}`,{
+        method: "DELETE",
+        headers:{
+            "Content-Type" : "application/json"
+        }
+    }).then(res => res.json())
+}
+
+export const getPostById = (postObj) =>{
+    return fetch(`${dataURL}/posts/${postObj.id}`)
+        .then(res => res.json())
+}
