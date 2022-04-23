@@ -1,10 +1,12 @@
 import React from "react"
 import { ClosedPost } from "./ClosedPost"
+import { useNavigate } from "react-router-dom"
 
 
 export const ClosedPostList = ({getLoggedInUser, post}) =>{  
 
     const userId = getLoggedInUser()
+
 
     return (
       <>

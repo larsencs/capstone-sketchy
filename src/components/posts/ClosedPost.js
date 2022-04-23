@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom"
+
 export const ClosedPost = ({post}) =>{
+
     return(
 
         <>
@@ -6,8 +9,8 @@ export const ClosedPost = ({post}) =>{
             <p>{post.description}</p>
             <p>{post.prompt.prompt}</p>
             <p>{post.emotion.emotion}</p>
-            <button>Make changes</button>
-            <button>Comments</button>
+            <Link to={`/${post.id}/update_post/`}><button type="button">Make changes</button></Link>
+            <button type="button" >Comments</button>
         </>
     )
 }
