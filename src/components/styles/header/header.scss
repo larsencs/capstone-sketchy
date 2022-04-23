@@ -1,0 +1,25 @@
+.header_div{
+    
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #title{
+        height: 120px;
+    
+    }
+    span{
+        width: 650px;
+        justify-content: space-between;
+        display:flex;
+    }
+}
+#logo{
+    height: 100px;
+    width: 100px;
+}
+.navbar_user_functions{
+    display:flex;
+    flex-direction: column;
+    margin: 0em 2em;
+}

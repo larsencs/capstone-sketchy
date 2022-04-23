@@ -1,0 +1,14 @@
+.dashboard_main_container{
+    display:flex;
+    flex-direction: row;
+
+    section{
+        display:flex;
+        border: 1px solid black;
+        flex: 1;
+    }
+}
+.post_container{
+    width: 100%;
+    // border: 1px solid black;
+}

@@ -1,0 +1,25 @@
+.navbar_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid black;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0em 1em;
+}
+
+.nav_links .link {
+  margin: 0em 1em;
+}
+
+.finish_link {
+  margin: 0em 1em;
+}
+/*# sourceMappingURL=NavBar.css.map */

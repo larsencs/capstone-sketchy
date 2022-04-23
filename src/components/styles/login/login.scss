@@ -1,0 +1,15 @@
+.login_form_container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    fieldset{
+        display:flex;
+        flex-direction: column;
+
+        button{
+            width: 30%;
+            align-self: flex-end;
+        }
+    }
+}
