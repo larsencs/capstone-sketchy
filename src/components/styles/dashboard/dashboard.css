@@ -16,6 +16,34 @@
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin: 1em;
+}
+
+.dashboard_main_container .open_prompts {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.dashboard_main_container .open_prompts_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard_main_container .closed_prompt {
+  border: 1px solid black;
+}
+
+.dashboard_main_container .closed_prompt_btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .post_container {

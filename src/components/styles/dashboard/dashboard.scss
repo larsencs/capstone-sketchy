@@ -1,12 +1,32 @@
 .dashboard_main_container{
     display:flex;
     flex-direction: row;
+    // background: url(../../../../public/images/watercolor.jpg)
 
     section{
         display:flex;
         border: 1px solid black;
         flex: 1;
+        margin: 1em;
+        
     }
+    .open_prompts{
+        border: 1px solid black;
+        width: 100%;
+    }
+
+    .open_prompts_section{
+        display:flex;
+        justify-content: center;
+    }
+    .closed_prompt{
+        border: 1px solid black;
+    }
+    .closed_prompt_btns{
+        display:flex;
+        justify-content: flex-end;
+    }
+
 }
 .post_container{
     width: 100%;

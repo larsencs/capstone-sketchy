@@ -8,7 +8,7 @@ export const OtherPostList = ({getLoggedInUser, post}) =>{
 
     return (
       <>
-        <div>
+        <div className="title_div">
         <h3>Other Posts</h3>
         <div className="post_container">
           {post.map((mappedPost) =>

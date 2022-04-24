@@ -1,9 +1,9 @@
+@import "../variables/Variables.scss";
+
 .header_div{
-    
     display:flex;
     justify-content: space-between;
     align-items: center;
-
     #title{
         height: 120px;
     

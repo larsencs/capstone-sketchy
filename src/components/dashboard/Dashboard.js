@@ -21,13 +21,13 @@ export const Dashboard = ({getLoggedInUser}) =>{
     return(
         <>
             <div className="dashboard_main_container">
-            <section className="prompts_section">
+            <section className="open_prompts_section">
                 <OpenPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
             </section>
-            <section className="prompts_section">
+            <section className="closed_prompts_section">
                 <ClosedPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
             </section>
-            <section className="posts_section">
+            <section className="other_posts_section">
                 <OtherPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
             </section>
             </div>

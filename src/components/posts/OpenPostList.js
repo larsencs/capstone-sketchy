@@ -9,7 +9,7 @@ export const OpenPostList = ({getLoggedInUser, post}) =>{
 
     return (
       <>
-        <div>
+        <div className="title_div">
           <h3>Open Posts</h3>
           <div>
             {post.map((mappedPost) =>
