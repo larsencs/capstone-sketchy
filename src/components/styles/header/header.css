@@ -1,4 +1,7 @@
 .header_div {
+  background: url("../../../../public/images/watercolor.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

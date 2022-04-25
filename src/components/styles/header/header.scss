@@ -1,6 +1,8 @@
 @import "../variables/Variables.scss";
 
 .header_div{
+    @include waterColor();
+    // @include inked();
     display:flex;
     justify-content: space-between;
     align-items: center;

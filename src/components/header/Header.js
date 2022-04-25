@@ -26,6 +26,7 @@ export const Header = ({getLoggedInUser, clearUser}) =>{
           </div>
           <div className="title_div">
             <img id="title" src="../images/title.png"></img>
+            {/* <h1>Looks Sketchy</h1> */}
           </div>
             </span>
           <div className="navbar_user_functions">
