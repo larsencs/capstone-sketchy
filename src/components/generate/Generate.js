@@ -48,8 +48,8 @@ export const Generate = () =>{
                 </select>
               </fieldset>
             </form>
-            <button type="button" onClick={handleClick}>Generate</button>
           </div>
+          <button type="button" onClick={handleClick}>Generate</button>
         </section>
       </>
     );

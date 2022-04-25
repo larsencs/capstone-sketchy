@@ -18,8 +18,10 @@
   height: 100vh;
 }
 
-.gen_container img {
+.gen_container div {
   margin-top: 5em;
+  border: 1px solid black;
+  width: 50%;
 }
 
 .gen_container form {
