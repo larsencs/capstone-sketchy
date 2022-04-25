@@ -35,6 +35,10 @@ $scared: #b6772e;
 }
 //Mixins
 
+@mixin textDec {
+    color: #fff;
+    text-shadow: 0px 0px 5px black;
+}
 @mixin flexCenter($direction) {
     display:flex;
     flex-direction: $direction;
@@ -99,7 +103,9 @@ $scared: #b6772e;
 }
 
 @mixin styleButtons{
-        margin: 0em 3px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        // margin: 1em;
         // @include labelGradient();
         border: none;
     

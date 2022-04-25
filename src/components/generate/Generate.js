@@ -39,8 +39,10 @@ export const Generate = () =>{
           {/* <div id="image_placeholder"></div> */}
             <form>
               <fieldset>
-                <label htmlFor="mood_selector">Select a mood</label>
-                <select id="emotionId"  onChange={controlInput}>
+                <label htmlFor="mood_selector">How are you feeling?</label>
+                
+                <select id="emotionId" onChange={controlInput}>
+                <option selected={true} disabled={true}>Select an emotion</option>
                   {mood.map((r) => (
                     <option value={r.id} key={r.id}>
                       {r.emotion}

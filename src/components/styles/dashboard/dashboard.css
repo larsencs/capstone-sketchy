@@ -145,7 +145,8 @@
 }
 
 .closed_prompt_btns button {
-  margin: 0em 3px;
+  margin-left: 5px;
+  margin-bottom: 5px;
   border: none;
 }
 
