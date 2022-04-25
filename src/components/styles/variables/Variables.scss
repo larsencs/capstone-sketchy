@@ -16,7 +16,7 @@ $darkPurple: #4e1a63;
 $lightPink: #dcb6da;
 $red: #b57474;
 //moods
-$angry: #a72d2d;
+$angry: #e74040;
 $sad: #2f3cb1;
 $neutral: #575d64;
 $anxious: #42a819;
@@ -28,7 +28,8 @@ $scared: #b6772e;
 
 @mixin emotions ($color){
 
-    background: $color;
+    color: $color;
+    text-shadow: 0px 0px 5px black;
 
 
 }
@@ -37,6 +38,11 @@ $scared: #b6772e;
 @mixin flexCenter($direction) {
     display:flex;
     flex-direction: $direction;
+}
+
+@mixin textshadow {
+    // color: white;
+    text-shadow: 0px 0px 5px black;
 }
 
 @mixin paperBackground {
@@ -55,8 +61,9 @@ $scared: #b6772e;
 }
 
 @mixin labelGradient{
+    // background: linear-gradient(90deg, rgba(116,149,181,1) 9%, rgba(182,202,220,1) 21%, rgba(182,202,220,1) 85%, rgba(116,149,181,1) 96%);
     // background: linear-gradient(90deg, rgba(116,149,181,1) 9%, rgba(182,202,220,1) 37%, rgba(182,202,220,1) 65%, rgba(116,149,181,1) 96%);
-    background: linear-gradient(90deg, rgba(69,51,99,1) 4%, rgba(220,182,218,1) 42%, rgba(182,202,220,1) 77%, rgba(116,149,181,1) 96%);
+    background: url('../../../../public/images/navbar2.svg'), linear-gradient(90deg, rgba(69,51,99,1) 4%, rgba(220,182,218,1) 42%, rgba(182,202,220,1) 77%, rgba(116,149,181,1) 96%);
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -89,5 +96,12 @@ $scared: #b6772e;
 
 @mixin textShadow {
     text-shadow: 0px 0px 10px black;
+}
+
+@mixin styleButtons{
+        margin: 0em 3px;
+        // @include labelGradient();
+        border: none;
+    
 }
 

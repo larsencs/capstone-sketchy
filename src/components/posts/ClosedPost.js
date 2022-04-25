@@ -11,12 +11,14 @@ export const ClosedPost = ({post}) =>{
             style={{ backgroundImage: `url(${post.image})` }}
           ></div>
           <div className="closed_prompt">
-            <div class="chosen_prompts" id={post.emotion.emotion}>
-              <p>{post.prompt.prompt}</p>
-              <p>{post.emotion.emotion}</p>
+            <div className="post_info">
+              <h4>{post.title}</h4>
+              <p>{post.description}</p>
             </div>
-            <h4>{post.title}</h4>
-            <p>{post.description}</p>
+            <div className="chosen_prompts" id={post.emotion.emotion}>
+              <p id="prompt_text">Draw:</p>
+              <p> {post.prompt.prompt}</p>
+            </div>
           </div>
         </div>
         <div className="closed_prompt_btns">

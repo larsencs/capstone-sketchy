@@ -1,0 +1,17 @@
+@import "../variables/Variables.scss";
+
+.gen_container{
+    @include backgroundGradient();
+    @include flexCenter(column);
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    img{
+        margin-top: 5em;
+    }
+    form{
+        width: 100%;
+    }
+}

@@ -16,6 +16,7 @@
 }
 #open_section{
     width: 30%;
+    // overflow:scroll;
 }
 #closed_section{
     width: 50%;
@@ -28,63 +29,105 @@
     @include flexCenter(column);
 
     h3{
-        @include waterColor();
-        // @include labelGradient();
+        // @include waterColor();
+        @include labelGradient();
         box-shadow: 0px 0px 5px black;
         border: 1px solid black;
         text-align: center;
         margin: 0px;
+        color: white;
+        text-shadow: 0px 0px 5px black;
+    }
+    h4{
+        margin: 5px 1em;
+        @include textShadow();
+        text-align: center;
+    }
+    p{
+        font-size: small;
     }
 }
 //this is targetting the individual open prompt cards
 .open_prompts{
+    @include flexCenter(column);
+    justify-content: center;
+    align-items: center;
     
-    border: 1px solid black;
+    border: 3px solid $border;
     @include paperBackground();
     margin: 5px;
+    height: 12vh;
+    
 }
 //This is targetting the invidual finished post cards
 .card_container{
     height: 30vh;
-    @include paperBackground();
+    // @include paperBackground();
     border: 1px solid black;
     @include flexCenter(row);
     margin: 5px;
+    button{
+        
+    }
 
     div{
         width: 50%;
-        border: 1px solid black;
-
-        h4{
-            margin: 0px;
-        }
+        // border: 1px solid black;
     }
     .chosen_prompts{
         display:flex;
         width: 100%;
-        height: 30%;
         margin: 0px;
 
         p{
-            font-size: 10pt;
+            font-size: small;
         }
     }
-    #angry{
-        @include emotions($angry);
-    }
-    #sad{
-        @include emotions($sad);
-    }
-    #anxious{
-        @include emotions($anxious);
-    }
-
 }
+.closed_prompt{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div{
+        width: 100%;
+    }
+    p{
+        margin-left: 5px;
+    }
+}
+
 .closed_prompt_btns{
     margin: 0px 5px;
     display:flex;
     align-items: baseline;
     justify-content: flex-end;
+    button{
+        @include styleButtons();
+    }
 }
 
+#angry{
+    @include emotions($angry);
+}
+#sad{
+    @include emotions($sad);
+}
+#anxious{
+    @include emotions($anxious);
+}
+#calm{
+    @include emotions($calm)
+}
+#neutral{
+    @include emotions($neutral)
+}
+#scary{
+    @include emotions($scared)
+}
+#prompt_text{
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+}
 
