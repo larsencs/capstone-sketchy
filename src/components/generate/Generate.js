@@ -35,11 +35,14 @@ export const Generate = () =>{
         <section className="gen_container">
           
           <div>
-          <img src="https://picsum.photos/300/400"/>
+          {/* <img src="https://picsum.photos/300/400"/> */}
+          {/* <div id="image_placeholder"></div> */}
             <form>
               <fieldset>
-                <label htmlFor="mood_selector">Select a mood</label>
-                <select id="emotionId"  onChange={controlInput}>
+                <label htmlFor="mood_selector">How are you feeling?</label>
+                
+                <select id="emotionId" onChange={controlInput}>
+                <option selected={true} disabled={true}>Select an emotion</option>
                   {mood.map((r) => (
                     <option value={r.id} key={r.id}>
                       {r.emotion}
@@ -48,8 +51,8 @@ export const Generate = () =>{
                 </select>
               </fieldset>
             </form>
-            <button type="button" onClick={handleClick}>Generate</button>
           </div>
+          <button type="button" onClick={handleClick}>Generate</button>
         </section>
       </>
     );

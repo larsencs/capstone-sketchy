@@ -1,6 +1,6 @@
 @import "../variables/Variables.scss";
 
-.gen_container{
+.open_prompt_card{
     @include backgroundGradient();
     @include flexCenter(column);
     justify-content: flex-start;
@@ -9,32 +9,22 @@
     height: 100vh;
 
 
+
     div{
         @include shadow();
         @include flexCenter(column);
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
         margin-top: 5em;
         border: 1px solid black;
         width: 50%;
         height: 32em;
         @include waterColor();
+
+        h1{
+            @include textDec();
+            
+        }
+
     }
-    form{
-        width: 100%;
-        @include navGradient();
-        @include shadow();
-    }
-    fieldset{
-        border: none;
-    }
-    button{
-        @include styleButtons();
-    }
-    label{
-        color: #fff;
-    }
-}
-#image_placeholder{
-    width: 100%;
-    @include waterColor();
 }

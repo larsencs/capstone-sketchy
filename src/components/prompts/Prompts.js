@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom"
 import { getPromptByMood } from "../modules/PromptManager"
 import { savePost } from "../modules/PostManager"
 import { useNavigate } from "react-router-dom"
+import "../styles/prompts/prompt.css"
 
 
 export const Prompts = ({getLoggedInUser}) =>{
@@ -23,7 +24,7 @@ export const Prompts = ({getLoggedInUser}) =>{
         const post = {
             userId: userId,
             promptId: promptId,
-            emotionId: prompt[0].id,
+            emotionId: prompt[0]?.id,
             isComplete: false
 
         }
@@ -32,13 +33,15 @@ export const Prompts = ({getLoggedInUser}) =>{
 
 
 
-    return(
-        <div className="open_prompt_card">
-            <img src="https://picsum.photos/300/400"></img>
-            <p>{prompt[0]?.prompt}</p>
-            <button>Generate</button>
-            <button type="button" onClick={handleSave}>Save</button>
-            
+    return (
+      <div className="open_prompt_card">
+        <div id="prompt_div">
+          <h1>{prompt[0]?.prompt}</h1>
         </div>
-    )
+        <button>Generate</button>
+          <button type="button" onClick={handleSave}>
+            Save
+          </button>
+      </div>
+    );
 }
