@@ -37,21 +37,25 @@ export const Login = ({setAuthUser}) => {
 
 	return (
     <div className="login_form_container">
-      <form onSubmit={handleLogin}>
-        <fieldset>
-          <input
-            type="email"
-            id="email"
-            placeholder="email"
-            value={loginUser.email}
-            onChange={handleInputChange}
-          />
-          <button type="submit">Login</button>
-        </fieldset>
-        <div>
-          <Link to="/register">Click here to register for an account</Link>
-        </div>
-      </form>
+      <div id="form_container">
+        <form onSubmit={handleLogin}>
+          <fieldset>
+            <input
+              type="email"
+              id="email"
+              placeholder="email"
+              value={loginUser.email}
+              onChange={handleInputChange}
+            />
+            <div id="login_btn">
+              <button type="submit">Login</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div id="register">
+        <Link to="/register">Click here to register for an account</Link>
+      </div>
     </div>
   );
 };

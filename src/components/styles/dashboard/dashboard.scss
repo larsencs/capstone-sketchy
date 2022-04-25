@@ -49,10 +49,7 @@
 }
 //this is targetting the individual open prompt cards
 .open_prompts{
-    @include flexCenter(column);
-    justify-content: center;
-    align-items: center;
-    
+    @include flexCenter(column, center);    
     border: 3px solid $border;
     @include paperBackground();
     margin: 5px;
@@ -85,8 +82,7 @@
     }
 }
 .closed_prompt{
-    display:flex;
-    flex-direction: column;
+    @include flexCenter(column);
     justify-content: space-between;
 
     div{

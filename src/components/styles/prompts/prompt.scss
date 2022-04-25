@@ -12,9 +12,7 @@
 
     div{
         @include shadow();
-        @include flexCenter(column);
-        justify-content: center;
-        align-items: center;
+        @include flexCenter(column, center);
         margin-top: 5em;
         border: 1px solid black;
         width: 50%;
