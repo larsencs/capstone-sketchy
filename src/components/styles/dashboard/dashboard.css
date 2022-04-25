@@ -1,4 +1,89 @@
 .dashboard_main_container {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(24%, #b6cadc), color-stop(88%, #7495b5), to(#33393e));
+  background: linear-gradient(0deg, #b6cadc 24%, #7495b5 88%, #33393e 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard_main_container section {
+  border: 1px solid black;
+  margin: 1em;
+  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+}
+
+#open_section {
+  width: 30%;
+}
+
+#closed_section {
+  width: 50%;
+}
+
+#other_section {
+  width: 20%;
+}
+
+.prompts_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.prompts_section h3 {
+  background: url("../../../../public/images/navbar2.svg"), -webkit-gradient(linear, left top, right top, color-stop(4%, #453363), color-stop(42%, #dcb6da), color-stop(77%, #b6cadc), color-stop(96%, #7495b5));
+  background: url("../../../../public/images/navbar2.svg"), linear-gradient(90deg, #453363 4%, #dcb6da 42%, #b6cadc 77%, #7495b5 96%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 0px 5px black;
+          box-shadow: 0px 0px 5px black;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+
+.prompts_section h4 {
+  margin: 5px 1em;
+  text-shadow: 0px 0px 10px black;
+  text-align: center;
+}
+
+.prompts_section p {
+  font-size: small;
+}
+
+.open_prompts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 3px solid #786c5e;
+  background: url("../../../../public/images/paper-one.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+  height: 12vh;
+}
+
+.card_container {
+  height: 30vh;
+  border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,19 +91,97 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin: 5px;
 }
 
-.dashboard_main_container section {
+.card_container div {
+  width: 50%;
+}
+
+.card_container .chosen_prompts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid black;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: 100%;
+  margin: 0px;
 }
 
-.post_container {
+.card_container .chosen_prompts p {
+  font-size: small;
+}
+
+.closed_prompt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.closed_prompt div {
   width: 100%;
+}
+
+.closed_prompt p {
+  margin-left: 5px;
+}
+
+.closed_prompt_btns {
+  margin: 0px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.closed_prompt_btns button {
+  margin: 0em 3px;
+  border: none;
+}
+
+#angry {
+  color: #e74040;
+  text-shadow: 0px 0px 5px black;
+}
+
+#sad {
+  color: #2f3cb1;
+  text-shadow: 0px 0px 5px black;
+}
+
+#anxious {
+  color: #42a819;
+  text-shadow: 0px 0px 5px black;
+}
+
+#calm {
+  color: #2f8fac;
+  text-shadow: 0px 0px 5px black;
+}
+
+#neutral {
+  color: #575d64;
+  text-shadow: 0px 0px 5px black;
+}
+
+#scary {
+  color: #b6772e;
+  text-shadow: 0px 0px 5px black;
+}
+
+#prompt_text {
+  color: white;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -1,9 +1,11 @@
+@import "../variables/Variables.scss";
+
 .header_div{
-    
+    @include inked();
+    // @include inked();
     display:flex;
     justify-content: space-between;
     align-items: center;
-
     #title{
         height: 120px;
     
@@ -17,6 +19,7 @@
 #logo{
     height: 100px;
     width: 100px;
+    margin: 0px;
 }
 .navbar_user_functions{
     display:flex;

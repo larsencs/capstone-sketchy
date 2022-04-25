@@ -9,18 +9,16 @@ export const OpenPostList = ({getLoggedInUser, post}) =>{
 
     return (
       <>
+        <h3>Open Posts</h3>
+
         <div>
-          <h3>Open Posts</h3>
-          <div>
-            {post.map((mappedPost) =>
-              mappedPost.userId === userId &&
-              mappedPost.isComplete === false ? (
-                <OpenPost key={mappedPost.id} post={mappedPost} />
-              ) : (
-                ""
-              )
-            )}
-          </div>
+          {post.map((mappedPost) =>
+            mappedPost.userId === userId && mappedPost.isComplete === false ? (
+              <OpenPost key={mappedPost.id} post={mappedPost} />
+            ) : (
+              ""
+            )
+          )}
         </div>
       </>
     );

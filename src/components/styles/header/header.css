@@ -1,4 +1,7 @@
 .header_div {
+  background: url("../../../../public/images/inked.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,6 +30,7 @@
 #logo {
   height: 100px;
   width: 100px;
+  margin: 0px;
 }
 
 .navbar_user_functions {

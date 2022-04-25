@@ -2,6 +2,7 @@ import { GetMoods } from "../modules/MoodManager"
 import React, {useState, useEffect} from "react"
 import { useNavigate } from "react-router-dom"
 import { Prompts } from "../prompts/Prompts"
+import "../styles/prompts/generate.css"
 
 export const Generate = () =>{
 
@@ -31,9 +32,10 @@ export const Generate = () =>{
 
     return (
       <>
-        <section>
-          <img src="https://picsum.photos/300/400"/>
+        <section className="gen_container">
+          
           <div>
+          <img src="https://picsum.photos/300/400"/>
             <form>
               <fieldset>
                 <label htmlFor="mood_selector">Select a mood</label>

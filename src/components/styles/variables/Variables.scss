@@ -1,0 +1,107 @@
+//Colors
+//paper pallette
+$border: #786c5e;
+$brown: #85724b;
+$green: #747462;
+$gray: #c9c8be;
+
+//watercolor palette
+$blueGray: #334c63;
+$darkBlue: #1a3a63;
+$lightBlue: #b6cadc;
+$blue: #7495b5;
+
+$purpleGray: #453363;
+$darkPurple: #4e1a63;
+$lightPink: #dcb6da;
+$red: #b57474;
+//moods
+$angry: #e74040;
+$sad: #2f3cb1;
+$neutral: #575d64;
+$anxious: #42a819;
+$happy: #bcbe33;
+$calm: #2f8fac;
+$scared: #b6772e;
+
+
+
+@mixin emotions ($color){
+
+    color: $color;
+    text-shadow: 0px 0px 5px black;
+
+
+}
+//Mixins
+
+@mixin flexCenter($direction) {
+    display:flex;
+    flex-direction: $direction;
+}
+
+@mixin textshadow {
+    // color: white;
+    text-shadow: 0px 0px 5px black;
+}
+
+@mixin paperBackground {
+    background: url("../../../../public/images/paper-one.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+@mixin backgroundGradient{
+    background: linear-gradient(0deg, rgba(182,202,220,1) 24%, rgba(116,149,181,1) 88%, rgba(51,57,62,1) 100%);
+    // background: linear-gradient(0deg, rgba(182,202,220,1) 24%, rgba(116,149,181,1) 97%, rgba(51,57,62,1) 100%);
+}
+
+@mixin navGradient {
+    background: url('../../../../public/images/navbar2.svg'), linear-gradient(90deg, rgba(26,58,99,1) 8%, rgba(144,170,196,1) 36%, rgba(116,149,181,1) 67%, rgba(26,58,99,1) 93%);
+}
+
+@mixin labelGradient{
+    // background: linear-gradient(90deg, rgba(116,149,181,1) 9%, rgba(182,202,220,1) 21%, rgba(182,202,220,1) 85%, rgba(116,149,181,1) 96%);
+    // background: linear-gradient(90deg, rgba(116,149,181,1) 9%, rgba(182,202,220,1) 37%, rgba(182,202,220,1) 65%, rgba(116,149,181,1) 96%);
+    background: url('../../../../public/images/navbar2.svg'), linear-gradient(90deg, rgba(69,51,99,1) 4%, rgba(220,182,218,1) 42%, rgba(182,202,220,1) 77%, rgba(116,149,181,1) 96%);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+@mixin paperAlternate {
+    background: url("../../../../public/images/paper-three.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+@mixin waterColor {
+    background: url("../../../../public/images/watercolor.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+@mixin inked {
+    background: url("../../../../public/images/inked.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+@mixin borders {
+    border: 1px solid black;
+}
+
+@mixin shadow {
+    box-shadow: 0px 0px 10px black,
+    0px 0px 15px black;
+}
+
+@mixin textShadow {
+    text-shadow: 0px 0px 10px black;
+}
+
+@mixin styleButtons{
+        margin: 0em 3px;
+        // @include labelGradient();
+        border: none;
+    
+}
+

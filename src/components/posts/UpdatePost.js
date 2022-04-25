@@ -29,7 +29,7 @@ export const UpdatePost = () =>{
     }
 
     const handleEditPost = () =>{
-        completePost(post).then(res => res.json())
+        completePost(post).then(navigate("/"))
     }
 
     useEffect(()=>{

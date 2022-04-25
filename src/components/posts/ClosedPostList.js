@@ -10,8 +10,8 @@ export const ClosedPostList = ({getLoggedInUser, post}) =>{
 
     return (
       <>
-        <div>
-          <h3>Finished Posts</h3>
+        <div className="title_div">
+          <h3 >Finished Posts</h3>
           <div>
             {post.map((mappedPost) =>
               mappedPost.userId === userId && mappedPost.isComplete ? (
