@@ -35,7 +35,8 @@ export const Generate = () =>{
         <section className="gen_container">
           
           <div>
-          <img src="https://picsum.photos/300/400"/>
+          {/* <img src="https://picsum.photos/300/400"/> */}
+          {/* <div id="image_placeholder"></div> */}
             <form>
               <fieldset>
                 <label htmlFor="mood_selector">Select a mood</label>

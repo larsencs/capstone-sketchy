@@ -9,11 +9,19 @@
     height: 100vh;
 
     div{
+        @include flexCenter(column);
+        justify-content: flex-end;
         margin-top: 5em;
         border: 1px solid black;
         width: 50%;
+        height: 32em;
+        @include waterColor();
     }
     form{
         width: 100%;
     }
+}
+#image_placeholder{
+    width: 100%;
+    @include waterColor();
 }
