@@ -8,6 +8,7 @@ import { Prompts } from "./prompts/Prompts";
 import { FinishPost } from "./posts/FinishPost";
 import { UpdatePost } from "./posts/UpdatePost";
 import { PostDashboard } from "./dashboard/PostDashboard";
+import { OtherPostDashboard } from "./dashboard/OtherPostDashboard";
 
 export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,}) => {
     
@@ -26,7 +27,7 @@ export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,
                     <Route path="/complete_prompt" element={<FinishPost getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/:postId/update_post/" element={<UpdatePost getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/all_posts" element={<PostDashboard getLoggedInUser={getLoggedInUser}/>}/>
-                    <Route/>
+                    <Route path="/other_posts" element={<OtherPostDashboard getLoggedInUser={getLoggedInUser}/>}/>
                     <Route/>
                     <Route/>
                     <Route/>

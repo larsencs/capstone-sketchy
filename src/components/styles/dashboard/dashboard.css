@@ -166,6 +166,13 @@
   border: none;
 }
 
+.other_posts {
+  margin: 5px;
+  border: 1px solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #angry {
   color: #e74040;
   text-shadow: 0px 0px 5px black;
