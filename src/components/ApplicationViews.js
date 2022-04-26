@@ -32,7 +32,6 @@ export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,
                     <Route/>
                     <Route/>
                     <Route/>
-                    <Route/>
                 </Route>
 
                 <Route path="/login" element={<Login setAuthUser={setAuthUser}/>}/>
