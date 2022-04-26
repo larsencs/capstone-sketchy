@@ -3,6 +3,7 @@
 .navbar_container{
     @include shadow();
     @include navbarBackground();
+    height: 2em;
     display:flex;
     @include borders();
     justify-content: space-between;

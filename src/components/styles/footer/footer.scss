@@ -1,0 +1,7 @@
+@import "../variables/Variables.scss";
+
+#wooden_bar{
+    @include navbarBackground();
+    height: 2em;
+    @include shadow();
+}
