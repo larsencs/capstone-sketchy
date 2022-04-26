@@ -10,3 +10,8 @@ export const postComment = (commentObj) =>{
 
     }).then(res => res.json())
 }
+
+export const getComments = () =>{
+    return fetch(`${dataURL}/comments/`)
+        .then(res => res.json())
+}
