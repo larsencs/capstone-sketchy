@@ -1,8 +1,9 @@
 .navbar_container {
   -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
           box-shadow: 0px 0px 10px black, 0px 0px 15px black;
-  background: url("../../../../public/images/navbar2.svg"), -webkit-gradient(linear, left top, right top, color-stop(8%, #1a3a63), color-stop(36%, #90aac4), color-stop(67%, #7495b5), color-stop(93%, #1a3a63));
-  background: url("../../../../public/images/navbar2.svg"), linear-gradient(90deg, #1a3a63 8%, #90aac4 36%, #7495b5 67%, #1a3a63 93%);
+  background: url(../../../../public/images/wood-texture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

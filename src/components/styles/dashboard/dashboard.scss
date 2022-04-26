@@ -3,7 +3,7 @@
 //This targets the entire dashboard container
 .dashboard_main_container{
    
-    @include backgroundGradient();
+    @include backgroundTexture();
     display:flex;
 
     section{
@@ -26,11 +26,11 @@
 }
 //This is targetting the sections that contain the three kinds of cards
 .prompts_section{
-    @include flexCenter(column);
+    @include flexCenter(column, none);
 
     h3{
         // @include waterColor();
-        @include labelGradient();
+        // @include labelGradient();
         box-shadow: 0px 0px 5px black;
         border: 1px solid black;
         text-align: center;
@@ -51,7 +51,7 @@
 .open_prompts{
     @include flexCenter(column, center);    
     border: 3px solid $border;
-    @include paperBackground();
+    // @include cardBackground();
     margin: 5px;
     height: 12vh;
     
@@ -61,7 +61,7 @@
     height: 30vh;
     // @include paperBackground();
     border: 1px solid black;
-    @include flexCenter(row);
+    @include flexCenter(row, none);
     margin: 5px;
     button{
         
@@ -82,7 +82,7 @@
     }
 }
 .closed_prompt{
-    @include flexCenter(column);
+    @include flexCenter(column, none);
     justify-content: space-between;
 
     div{

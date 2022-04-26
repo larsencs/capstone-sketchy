@@ -1,6 +1,7 @@
 .login_form_container {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(24%, #b6cadc), color-stop(88%, #7495b5), to(#33393e));
-  background: linear-gradient(0deg, #b6cadc 24%, #7495b5 88%, #33393e 100%);
+  background: url(../../../../public/images/plain-paper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9,13 +10,18 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .login_form_container #form_container {
-  background: url("../../../../public/images/watercolor.jpg");
+  background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
@@ -27,6 +33,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -53,9 +64,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .login_form_container #login_btn {

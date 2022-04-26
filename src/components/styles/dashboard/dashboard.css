@@ -1,6 +1,7 @@
 .dashboard_main_container {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(24%, #b6cadc), color-stop(88%, #7495b5), to(#33393e));
-  background: linear-gradient(0deg, #b6cadc 24%, #7495b5 88%, #33393e 100%);
+  background: url(../../../../public/images/plain-paper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,13 +34,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
 }
 
 .prompts_section h3 {
-  background: url("../../../../public/images/navbar2.svg"), -webkit-gradient(linear, left top, right top, color-stop(4%, #453363), color-stop(42%, #dcb6da), color-stop(77%, #b6cadc), color-stop(96%, #7495b5));
-  background: url("../../../../public/images/navbar2.svg"), linear-gradient(90deg, #453363 4%, #dcb6da 42%, #b6cadc 77%, #7495b5 96%);
-  background-size: cover;
-  background-repeat: no-repeat;
   -webkit-box-shadow: 0px 0px 5px black;
           box-shadow: 0px 0px 5px black;
   border: 1px solid black;
@@ -70,13 +72,9 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   border: 3px solid #786c5e;
-  background: url("../../../../public/images/paper-one.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   margin: 5px;
   height: 12vh;
 }
@@ -91,6 +89,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   margin: 5px;
 }
 
@@ -118,6 +121,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;

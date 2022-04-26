@@ -1,8 +1,8 @@
 @import "../variables/Variables.scss";
 
 .gen_container{
-    @include backgroundGradient();
-    @include flexCenter(column);
+    @include backgroundTexture();
+    @include flexCenter(column, none);
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -11,7 +11,7 @@
 
     div{
         @include shadow();
-        @include flexCenter(column);
+        @include flexCenter(column, none);
         justify-content: flex-end;
         margin-top: 5em;
         border: 1px solid black;
@@ -21,7 +21,7 @@
     }
     form{
         width: 100%;
-        @include navGradient();
+        @include navbarBackground();
         @include shadow();
     }
     fieldset{

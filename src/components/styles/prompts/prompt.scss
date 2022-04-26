@@ -1,8 +1,8 @@
 @import "../variables/Variables.scss";
 
 .open_prompt_card{
-    @include backgroundGradient();
-    @include flexCenter(column);
+    @include backgroundTexture();
+    @include flexCenter(column, none);
     justify-content: flex-start;
     align-items: center;
     width: 100%;
@@ -21,6 +21,7 @@
 
         h1{
             @include textDec();
+            text-align: center;
             
         }
 
