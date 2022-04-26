@@ -1,0 +1,21 @@
+.all_post_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 100vh;
+  background: url(../../../../public/images/plain-paper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.all_post_container .post_div {
+  margin: .5em;
+  border: 1px solid black;
+  width: 20%;
+  height: 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*# sourceMappingURL=post.css.map */

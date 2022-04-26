@@ -39,7 +39,7 @@
     }
     h4{
         margin: 5px 1em;
-        @include textShadow();
+        // @include textShadow();
         text-align: center;
     }
     p{
@@ -53,6 +53,13 @@
     @include cardBackground();
     margin: 5px;
     height: 12vh;
+
+    div{
+        display:flex;
+        justify-content: flex-end;
+        align-content:initial;
+        
+    }
     
 }
 //This is targetting the invidual finished post cards
@@ -111,6 +118,7 @@
     border: 1px solid black;
     background-size: cover;
     background-repeat: no-repeat;
+    text-overflow: ellipsis;
 }
 
 #angry{

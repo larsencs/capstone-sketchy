@@ -50,7 +50,6 @@
 
 .prompts_section h4 {
   margin: 5px 1em;
-  text-shadow: 0px 0px 10px black;
   text-align: center;
 }
 
@@ -72,11 +71,23 @@
   -ms-flex-line-pack: center;
       align-content: center;
   border: 3px solid #786c5e;
-  background: url(../../../../public/images/paper-one.jpg);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../../../../public/images/paper-four.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../../../public/images/paper-four.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5px;
   height: 12vh;
+}
+
+.open_prompts div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-line-pack: initial;
+      align-content: initial;
 }
 
 .card_container {
@@ -171,36 +182,37 @@
   border: 1px solid black;
   background-size: cover;
   background-repeat: no-repeat;
+  text-overflow: ellipsis;
 }
 
 #angry {
-  color: #e74040;
-  text-shadow: 0px 0px 5px black;
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #e74040, 0px 0px 15px #e74040;
 }
 
 #sad {
-  color: #2f3cb1;
-  text-shadow: 0px 0px 5px black;
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #2f3cb1, 0px 0px 15px #2f3cb1;
 }
 
 #anxious {
-  color: #42a819;
-  text-shadow: 0px 0px 5px black;
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #42a819, 0px 0px 15px #42a819;
 }
 
 #calm {
-  color: #2f8fac;
-  text-shadow: 0px 0px 5px black;
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #2f8fac, 0px 0px 15px #2f8fac;
 }
 
 #neutral {
-  color: #575d64;
-  text-shadow: 0px 0px 5px black;
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #7a7a7a, 0px 0px 15px #7a7a7a;
 }
 
 #scary {
-  color: #b6772e;
-  text-shadow: 0px 0px 5px black;
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #b6772e, 0px 0px 15px #b6772e;
 }
 
 #prompt_text {
