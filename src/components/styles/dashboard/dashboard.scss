@@ -106,6 +106,12 @@
         @include styleButtons();
     }
 }
+.other_posts{
+    margin: 5px;
+    border: 1px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 #angry{
     @include emotions($angry);
