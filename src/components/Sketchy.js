@@ -26,7 +26,7 @@ export const Sketchy = () =>{
     return(
 
         <>
-        <Header getLoggedInUser={getLoggedInUser} clearUser={clearUser}/>
+        <Header getLoggedInUser={getLoggedInUser} clearUser={clearUser} isAuthenticated={isAuthenticated}/>
         <NavBar getLoggedInUser={getLoggedInUser} clearUser={clearUser} isAuthenticated={isAuthenticated}/>
         <ApplicationViews setAuthUser={setAuthUser} getLoggedInUser={getLoggedInUser} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated}/>
         <Footer/>

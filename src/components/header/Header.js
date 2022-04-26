@@ -2,9 +2,46 @@ import React,{useState, useEffect} from "react"
 import "../styles/header/header.css"
 import { getUserById } from "../modules/UserManager"
 
-export const Header = ({getLoggedInUser, clearUser}) =>{
+export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
 
-    const [user, updateUser] = useState({})
+  const [user, updateUser] = useState({})
+    const componentArr = [
+      <>
+      <div className="header_div">
+          <span>
+          <div className="logo_div">
+          <img id="logo" src="../images/sketchy-logo.png"></img>
+        </div>
+        <div className="title_div">
+          <img id="title" src="../images/title.png"></img>
+          {/* <h1>Looks Sketchy</h1> */}
+        </div>
+          </span>
+        <div className="navbar_user_functions">
+        {`Hello, ${user.name}`}
+        <button onClick={clearUser}>Logout</button>
+      </div>
+      </div>
+
+    </>
+    ,
+    <>
+    <div className="header_div">
+        <span>
+        <div className="logo_div">
+        <img id="logo" src="../images/sketchy-logo.png"></img>
+      </div>
+      <div className="title_div">
+        <img id="title" src="../images/title.png"></img>
+        {/* <h1>Looks Sketchy</h1> */}
+      </div>
+        </span>
+    </div>
+
+  </>
+    ]
+
+    
 
     useEffect(()=>{
         getUserById(getLoggedInUser())
@@ -19,22 +56,7 @@ export const Header = ({getLoggedInUser, clearUser}) =>{
 
     return (
       <>
-        <div className="header_div">
-            <span>
-            <div className="logo_div">
-            <img id="logo" src="../images/sketchy-logo.png"></img>
-          </div>
-          <div className="title_div">
-            <img id="title" src="../images/title.png"></img>
-            {/* <h1>Looks Sketchy</h1> */}
-          </div>
-            </span>
-          <div className="navbar_user_functions">
-          {`Hello, ${user.name}`}
-          <button onClick={clearUser}>Logout</button>
-        </div>
-        </div>
-
+        {isAuthenticated? componentArr[0] : componentArr[1]}
       </>
     );
 }
