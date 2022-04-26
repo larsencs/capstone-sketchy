@@ -7,6 +7,7 @@ import { Generate } from "./generate/Generate";
 import { Prompts } from "./prompts/Prompts";
 import { FinishPost } from "./posts/FinishPost";
 import { UpdatePost } from "./posts/UpdatePost";
+import { PostDashboard } from "./dashboard/PostDashboard";
 
 export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,}) => {
     
@@ -24,7 +25,7 @@ export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,
                     <Route path="/prompt" element={<Prompts getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/complete_prompt" element={<FinishPost getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/:postId/update_post/" element={<UpdatePost getLoggedInUser={getLoggedInUser}/>}/>
-                    <Route/>
+                    <Route path="/all_posts" element={<PostDashboard getLoggedInUser={getLoggedInUser}/>}/>
                     <Route/>
                     <Route/>
                     <Route/>

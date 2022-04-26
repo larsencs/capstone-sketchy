@@ -15,7 +15,7 @@ export const NavBar = ({clearUser, getLoggedInUser, isAuthenticated}) =>{
         <nav className="navbar_container">
           <span className="nav_links">
             <div><Link to="/" className="link">Dashboard</Link></div>
-            <div><Link to="/posts" className="link">Posts</Link></div>
+            <div><Link to="/all_posts" className="link">Posts</Link></div>
             <div><Link to="/generate" className="link">Generate</Link></div>
           </span>
           <span className="finish_link">
