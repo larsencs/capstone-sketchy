@@ -116,6 +116,11 @@
   font-size: small;
 }
 
+.finished_picture {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .closed_prompt {
   display: -webkit-box;
   display: -ms-flexbox;
