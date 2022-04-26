@@ -80,6 +80,11 @@
         }
     }
 }
+.finished_picture{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .closed_prompt{
     @include flexCenter(column, none);
     justify-content: space-between;
