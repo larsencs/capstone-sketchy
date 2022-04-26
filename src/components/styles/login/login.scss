@@ -1,15 +1,44 @@
-.login_form_container{
-    display:flex;
-    justify-content: center;
-    align-items: center;
+@import "../variables/Variables.scss";
 
-    fieldset{
+.login_form_container{
+    @include backgroundGradient();
+    height: 100vh;
+    @include flexCenter(column, center);
+
+    #form_container{
+        @include waterColor();
+        @include shadow();
+        @include flexCenter(column);
+        justify-content: flex-end;
+        margin-top: 10em;
+        border: 1px solid black;
+        height: 30vh;
+        width: 30%;
+
+        form{
+            width: 100%;
+
+            textarea{
+                width: 50%;
+            }
+            fieldset{
+                border: none;
+            }
+        }
+    }
+
+    #register{
+        margin-top: 3em;
+        @include flexCenter(column, center)
+    }
+    #login_btn{
+        align-items: baseline;
         display:flex;
-        flex-direction: column;
+        justify-content: flex-end;
 
         button{
-            width: 30%;
-            align-self: flex-end;
+            @include styleButtons();
+            // @include shadow();
         }
     }
 }

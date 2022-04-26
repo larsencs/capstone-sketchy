@@ -23,6 +23,13 @@ export const NavBar = ({clearUser, getLoggedInUser, isAuthenticated}) =>{
           </span>
         </nav>
       </>,
+            <>
+            <nav className="navbar_container">
+              <span className="nav_links">
+                <div><Link to="/" className="link">Dashboard</Link></div>
+              </span>
+            </nav>
+          </>
     ];
 
     const navigate = useNavigate()
