@@ -8,10 +8,7 @@
 }
 
 .dashboard_main_container section {
-  border: 1px solid black;
   margin: 1em;
-  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
-          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
 }
 
 #open_section {
@@ -75,12 +72,18 @@
   -ms-flex-line-pack: center;
       align-content: center;
   border: 3px solid #786c5e;
+  background: url(../../../../public/images/paper-one.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 5px;
   height: 12vh;
 }
 
 .card_container {
   height: 30vh;
+  background: url(../../../../public/images/watercolor.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid black;
   display: -webkit-box;
   display: -ms-flexbox;

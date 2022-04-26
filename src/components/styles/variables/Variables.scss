@@ -51,6 +51,12 @@ $scared: #b6772e;
     background-repeat: no-repeat;
 }
 
+@mixin cardBackground {
+    background: url(../../../../public/images/paper-one.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @mixin textDec {
     color: #fff;
     text-shadow: 0px 0px 5px black;
