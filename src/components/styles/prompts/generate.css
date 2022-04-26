@@ -1,6 +1,7 @@
 .gen_container {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(24%, #b6cadc), color-stop(88%, #7495b5), to(#33393e));
-  background: linear-gradient(0deg, #b6cadc 24%, #7495b5 88%, #33393e 100%);
+  background: url(../../../../public/images/plain-paper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,6 +9,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -28,6 +34,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -35,15 +46,16 @@
   border: 1px solid black;
   width: 50%;
   height: 32em;
-  background: url("../../../../public/images/watercolor.jpg");
+  background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .gen_container form {
   width: 100%;
-  background: url("../../../../public/images/navbar2.svg"), -webkit-gradient(linear, left top, right top, color-stop(8%, #1a3a63), color-stop(36%, #90aac4), color-stop(67%, #7495b5), color-stop(93%, #1a3a63));
-  background: url("../../../../public/images/navbar2.svg"), linear-gradient(90deg, #1a3a63 8%, #90aac4 36%, #7495b5 67%, #1a3a63 93%);
+  background: url(../../../../public/images/wood-texture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
           box-shadow: 0px 0px 10px black, 0px 0px 15px black;
 }
@@ -64,7 +76,7 @@
 
 #image_placeholder {
   width: 100%;
-  background: url("../../../../public/images/watercolor.jpg");
+  background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }

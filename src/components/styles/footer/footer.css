@@ -1,0 +1,9 @@
+#wooden_bar {
+  background: url(../../../../public/images/wood-texture.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 2em;
+  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+}
+/*# sourceMappingURL=footer.css.map */

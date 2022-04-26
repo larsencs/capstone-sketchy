@@ -1,14 +1,15 @@
 @import "../variables/Variables.scss";
 
 .login_form_container{
-    @include backgroundGradient();
+    @include backgroundTexture();
     height: 100vh;
-    @include flexCenter(column, center);
+    @include flexCenter(column, none);
+    align-items: center;
 
     #form_container{
         @include waterColor();
         @include shadow();
-        @include flexCenter(column);
+        @include flexCenter(column, none);
         justify-content: flex-end;
         margin-top: 10em;
         border: 1px solid black;

@@ -1,6 +1,7 @@
 .open_prompt_card {
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(24%, #b6cadc), color-stop(88%, #7495b5), to(#33393e));
-  background: linear-gradient(0deg, #b6cadc 24%, #7495b5 88%, #33393e 100%);
+  background: url(../../../../public/images/plain-paper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,6 +9,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: none;
+      -ms-flex-pack: none;
+          justify-content: none;
+  -ms-flex-line-pack: none;
+      align-content: none;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -31,14 +37,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   margin-top: 5em;
   border: 1px solid black;
   width: 50%;
   height: 32em;
-  background: url("../../../../public/images/watercolor.jpg");
+  background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -46,5 +51,6 @@
 .open_prompt_card div h1 {
   color: #fff;
   text-shadow: 0px 0px 5px black;
+  text-align: center;
 }
 /*# sourceMappingURL=prompt.css.map */

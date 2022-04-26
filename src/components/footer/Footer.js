@@ -1,3 +1,9 @@
+import "../styles/footer/footer.css";
+
 export const Footer = () =>{
-    return("Footer is working")
+    return (
+      <>
+        <div id="wooden_bar"></div>
+      </>
+    );
 }
