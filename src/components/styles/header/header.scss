@@ -4,15 +4,61 @@
     @include backgroundTexture();
     display:flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
     #title{
         height: 120px;
     
     }
-    span{
-        width: 650px;
-        justify-content: space-between;
+    // span{
+    //     width: 650px;
+    //     justify-content: space-between;
+    //     display:flex;
+    // }
+
+    .navbar_user_functions{
+        align-self: center;
+    }
+    button{
+        margin-top: .5em;
+        @include styleButtons();
+    }
+    .title_div{
+    }
+    h1{
+        @include scribblesFont();
+        font-size: 40pt;
+    }
+}
+.login_header_div{
+    @include backgroundTexture();
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    #title{
+        height: 120px;
+    
+    }
+    // span{
+    //     width: 650px;
+    //     justify-content: space-between;
+    //     display:flex;
+    // }
+
+    .navbar_user_functions{
+        align-self: center;
+    }
+    button{
+        margin-top: .5em;
+        @include styleButtons();
+    }
+    .title_div{
         display:flex;
+        justify-content: center;
+        width: 100%;
+    }
+    h1{
+        @include scribblesFont();
+        font-size: 40pt;
     }
 }
 #logo{

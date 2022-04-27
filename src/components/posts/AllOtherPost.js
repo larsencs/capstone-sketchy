@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { useNavigate } from "react-router-dom"
 import { postComment } from "../modules/CommentManager"
+import "../styles/posts/post.css"
 
 export const AllOtherPost = ({post, getLoggedInUser}) =>{
 
@@ -28,7 +29,7 @@ export const AllOtherPost = ({post, getLoggedInUser}) =>{
     }
 
     const componentArr = [<div>
-        <div style={{backgroundImage:`url(${post.image})`}}></div>
+        <div className="post_div" style={{backgroundImage:`url(${post.image})`} }></div>
         <div>
             <h4>{post.title}</h4>
             <p>{post.description}</p>

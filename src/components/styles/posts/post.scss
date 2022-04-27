@@ -7,6 +7,7 @@
     @include backgroundTexture();
 
     .post_div{
+        @include textDec();
         margin: .5em;
         border: 1px solid black;
         width: 20%;

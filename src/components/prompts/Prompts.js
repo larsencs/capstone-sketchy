@@ -23,7 +23,7 @@ export const Prompts = ({getLoggedInUser}) =>{
     const handleSave = () =>{
         const post = {
             userId: userId,
-            promptId: promptId,
+            promptId: parseInt(promptId),
             emotionId: prompt[0]?.id,
             isComplete: false
 
@@ -38,7 +38,7 @@ export const Prompts = ({getLoggedInUser}) =>{
         <div id="prompt_div">
           <h1>{prompt[0]?.prompt}</h1>
         </div>
-        <button>Generate</button>
+        <button onClick={()=>navigate("/prompt")}>Generate</button>
           <button type="button" onClick={handleSave}>
             Save
           </button>
