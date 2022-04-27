@@ -20,6 +20,9 @@
         @include waterColor();
     }
     form{
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
         width: 100%;
         @include navbarBackground();
         @include shadow();
@@ -28,7 +31,11 @@
         border: none;
     }
     button{
+        
         @include styleButtons();
+        border: 1px solid #fff;
+        color: #fff;
+        margin-right: 2em;
     }
     label{
         color: #fff;

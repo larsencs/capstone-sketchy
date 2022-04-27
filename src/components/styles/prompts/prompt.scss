@@ -20,6 +20,8 @@
         @include waterColor();
 
         h1{
+            @include scribblesFont();
+            font-size: 40pt;
             @include textDec();
             text-align: center;
             

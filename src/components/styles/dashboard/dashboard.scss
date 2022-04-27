@@ -29,17 +29,21 @@
     @include flexCenter(column, none);
 
     h3{
+        @include scribblesFont();
+        // text-shadow: 0px 0px 5px black;
         // @include navbarBackground();
         box-shadow: 0px 0px 5px black;
         border: 1px solid black;
         text-align: center;
         margin: 0px;
-        color: white;
-        text-shadow: 0px 0px 5px black;
+        font-size: xx-large;
+        // color: white;
+        // text-shadow: 0px 0px 5px black;
     }
     h4{
+        
         margin: 5px 1em;
-        @include textShadow();
+        // @include textShadow();
         text-align: center;
     }
     p{
@@ -49,14 +53,25 @@
 //this is targetting the individual open prompt cards
 .open_prompts{
     @include flexCenter(column, center);    
-    border: 3px solid $border;
+    border: 1px solid black;
+    // @include shadow();
     @include cardBackground();
     margin: 5px;
     height: 12vh;
+
+    div{
+        display:flex;
+        justify-content: flex-end;
+        align-content:initial;
+        
+    }
     
 }
 //This is targetting the invidual finished post cards
 .card_container{
+    // @include shadow();
+    @include textDec();
+    
     height: 30vh;
     @include waterColor();
     border: 1px solid black;
@@ -68,6 +83,7 @@
 
     div{
         width: 50%;
+        
         // border: 1px solid black;
     }
     .chosen_prompts{
@@ -80,6 +96,7 @@
         }
     }
 }
+
 .finished_picture{
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,6 +105,7 @@
 .closed_prompt{
     @include flexCenter(column, none);
     justify-content: space-between;
+    border-left: 2px solid black;
 
     div{
         width: 100%;
@@ -105,12 +123,33 @@
     button{
         @include styleButtons();
     }
+        #angry_btn{
+            @include buttonGlow($angry);
+        }
+        #sad_btn{
+            @include buttonGlow($sad);
+        }
+        #anxious_btn{
+            @include buttonGlow($anxious);
+        }
+        #calm_btn{
+            @include buttonGlow($calm);
+        }
+        #neutral_btn{
+            @include buttonGlow($neutral);
+        }
+        #scary_btn{
+            @include buttonGlow($scared);
+        }
 }
 .other_posts{
+    @include textDec();
     margin: 5px;
     border: 1px solid black;
+    // @include shadow();
     background-size: cover;
     background-repeat: no-repeat;
+    text-overflow: ellipsis;
 }
 
 #angry{
@@ -123,13 +162,13 @@
     @include emotions($anxious);
 }
 #calm{
-    @include emotions($calm)
+    @include emotions($calm);
 }
 #neutral{
-    @include emotions($neutral)
+    @include emotions($neutral);
 }
 #scary{
-    @include emotions($scared)
+    @include emotions($scared);
 }
 #prompt_text{
     color: white;

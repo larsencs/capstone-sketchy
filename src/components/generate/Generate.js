@@ -50,9 +50,11 @@ export const Generate = () =>{
                   ))}
                 </select>
               </fieldset>
+              <button type="button" onClick={handleClick}>Generate</button>
+              
             </form>
           </div>
-          <button type="button" onClick={handleClick}>Generate</button>
+          
         </section>
       </>
     );

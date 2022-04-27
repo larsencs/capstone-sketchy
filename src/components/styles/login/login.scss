@@ -39,6 +39,8 @@
 
         button{
             @include styleButtons();
+            color: #fff;
+            border: 1px solid #fff;
             // @include shadow();
         }
     }

@@ -28,7 +28,7 @@ export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,
                     <Route path="/:postId/update_post/" element={<UpdatePost getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/all_posts" element={<PostDashboard getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/other_posts" element={<OtherPostDashboard getLoggedInUser={getLoggedInUser}/>}/>
-                    <Route/>
+                    <Route path="/:postId/complete_prompt" element={<FinishPost getLoggedInUser={getLoggedInUser}/>}/>
                     <Route/>
                     <Route/>
                     <Route/>

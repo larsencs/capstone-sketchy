@@ -26,9 +26,9 @@ export const ClosedPost = ({post, comments}) =>{
       </div>
       <div className="closed_prompt_btns">
         <Link to={`/${post.id}/update_post/`}>
-          <button type="button">Make changes</button>
+          <button type="button" id={`${post.emotion.emotion}_btn`}>Make changes</button>
         </Link>
-        <button type="button" onClick={() => updateSeeComments(true)}>Comments</button>
+        <button type="button" onClick={() => updateSeeComments(true)} id={`${post.emotion.emotion}_btn`}>Comments</button>
       </div>
     </>
     ,
@@ -38,7 +38,8 @@ export const ClosedPost = ({post, comments}) =>{
         className="finished_picture"
         style={{ backgroundImage: `url(${post.image})` }}
       ></div>
-      <div className="closed_prompt">
+      <div className="post_comments">
+        <h4>Comments</h4>
         {comments.map(r => r.postId === post.id ? <p>{r.comment}</p> : console.log(r.postId)) }
       </div>
     </div>

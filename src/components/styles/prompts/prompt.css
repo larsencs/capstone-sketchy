@@ -49,6 +49,12 @@
 }
 
 .open_prompt_card div h1 {
+  font-family: 'Scribbles';
+  src: url("../fonts/Scribbles-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+  word-spacing: 15px;
+  font-size: 40pt;
   color: #fff;
   text-shadow: 0px 0px 5px black;
   text-align: center;

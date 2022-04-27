@@ -8,15 +8,15 @@ export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
     const componentArr = [
       <>
       <div className="header_div">
-          <span>
+
           <div className="logo_div">
           <img id="logo" src="../images/sketchy-logo.png"></img>
         </div>
         <div className="title_div">
-          <img id="title" src="../images/title.png"></img>
-          {/* <h1>Looks Sketchy</h1> */}
+          {/* <img id="title" src="../images/title.png"></img> */}
+          <h1>Looks Sketchy</h1>
         </div>
-          </span>
+
         <div className="navbar_user_functions">
         {`Hello, ${user.name}`}
         <button onClick={clearUser}>Logout</button>
@@ -26,16 +26,14 @@ export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
     </>
     ,
     <>
-    <div className="header_div">
-        <span>
+    <div className="login_header_div">
         <div className="logo_div">
         <img id="logo" src="../images/sketchy-logo.png"></img>
       </div>
       <div className="title_div">
-        <img id="title" src="../images/title.png"></img>
-        {/* <h1>Looks Sketchy</h1> */}
+        {/* <img id="title" src="../images/title.png"></img> */}
+        <h1>Looks Sketchy</h1>
       </div>
-        </span>
     </div>
 
   </>
