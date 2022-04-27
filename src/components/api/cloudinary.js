@@ -4,7 +4,10 @@ const dataURL = `https://api.cloudinary.com/v1_1/${Settings.cloudName}/image/`
 
 export const uploadImage = (imageFile) =>{
     return fetch(`${dataURL}/upload/${imageFile}`,{
-        method: "POST"
+        method: "POST",
+        headers:{
+            "Access-Control-Allow-Origin"  : "https://www.cloudinary.com"
+        }
     }).then(res => console.log(res))
 }
 

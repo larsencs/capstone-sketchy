@@ -3,28 +3,26 @@ import { getPostByUserId, completePost, getPostById } from "../modules/PostManag
 import { getPromptById } from "../modules/PromptManager"
 import { useNavigate, useParams } from "react-router-dom"
 import { uploadImage } from "../api/cloudinary"
+import { Settings } from "../../Settings.js"
 
 
 
 export const FinishPost = ({getLoggedInUser}) =>{
 
-    const {postId} = useParams()
-
     const navigate = useNavigate()
 
     const userId = getLoggedInUser()
+    const [file, updateFile] = useState()
     const [post, updatePost] = useState([])
-    const [specificPost, updateSpecificPost] = useState({})
-
     const [selectedPost, updateSelected] = useState({
         userId: getLoggedInUser(),
-        promptId : "",
-        emotionId: "",
-        isComplete: false,
         id: "",
+        description: "",
         title: "",
         image: "",
-        description: ""
+        isComplete: false,
+        promptId : "",
+        emotionId: ""
     })
 
 
@@ -38,22 +36,36 @@ export const FinishPost = ({getLoggedInUser}) =>{
         }
 
         updateSelected(selectedTarget)
+     
+    }
 
+    const handleFile = (event) =>{
+        updateFile(event.target.files)
 
-        
     }
 
     const controlInput = (event) =>{
         const selected = {...selectedPost}
+       
         selected[event.target.id] = event.target.value
 
         updateSelected(selected)
     }
 
-    const savePost = (event) =>{
-        const completed = {...selectedPost}
-        completed.isComplete = true
-        completePost(completed).then(navigate("/"))
+    const savePost = () =>{
+        const formData = new FormData()                
+        formData.append("file", file)
+        formData.append("upload_preset", `${Settings.preset}`)
+
+        uploadImage(formData)
+            .then(res => {
+                console.log(res)
+            })
+
+        // const completed = {...selectedPost}
+        // completed.isComplete = true
+        // completePost(completed).then(navigate("/"))
+        // console.log(completed)
     }
 
     useEffect(()=>{
@@ -61,13 +73,9 @@ export const FinishPost = ({getLoggedInUser}) =>{
             .then(res => updatePost(res))
     },[])
 
-    useEffect(()=>{
-        getPostById(postId)
-            .then(res => updateSpecificPost(res))
-    },[])
-
-    const componentArr = [
+    return(
         <>
+
         <div>
             <form>
                 <fieldset>
@@ -81,32 +89,13 @@ export const FinishPost = ({getLoggedInUser}) =>{
                     <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={selectedPost.prompt?.prompt} disabled={true}></input>
                     <input type="text" id="mood" placeholder="mood" defaultValue={selectedPost.emotion?.emotion} disabled={true}></input>
                     <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
-                    <input type="text" id="image" placeholder="image" onChange={controlInput}></input>
+                    <input type="file" id="image" onChange={handleFile}></input>
                     <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
                     <button type="button" onClick={savePost}>Submit</button>
                 </fieldset>
             </form>
         </div>
-    </>
-    ,
-    <>
-        <form>
-        <fieldset>
-            <p>image placeholder</p>
-            <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={specificPost.prompt?.prompt} disabled={true}></input>
-            <input type="text" id="mood" placeholder="mood" defaultValue={specificPost.emotion?.emotion} disabled={true}></input>
-            <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
-            <input type="text" id="image" placeholder="image" onChange={controlInput}></input>
-            <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
-            <button type="button" onClick={savePost}>Submit</button>
-        </fieldset>
-        </form>
-    </>
-    ]
 
-    return(
-        <>
-            {postId ? componentArr[1] : componentArr[0]}
         </>
     )
 }
