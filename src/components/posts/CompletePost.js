@@ -7,8 +7,9 @@ import { Settings } from "../../Settings.js"
 
 
 
-export const FinishPost = ({getLoggedInUser}) =>{
+export const CompletePost = ({getLoggedInUser}) =>{
 
+    const {postId} = useParams()
     const navigate = useNavigate()
 
     const userId = getLoggedInUser()
@@ -25,31 +26,17 @@ export const FinishPost = ({getLoggedInUser}) =>{
         emotionId: ""
     })
 
-
-
-    const handleSelect = (event) =>{
-        let selectedTarget = {}
-        for(const thing of post){
-            if(thing.id === parseInt(event.target.value)){
-                selectedTarget=thing
-            }
-        }
-
-        updateSelected(selectedTarget)
-     
-    }
-
     const handleFile = (event) =>{
         updateFile(event.target.files)
 
     }
 
     const controlInput = (event) =>{
-        const selected = {...selectedPost}
+        const selected = {...post}
        
         selected[event.target.id] = event.target.value
 
-        updateSelected(selected)
+        updatePost(selected)
     }
 
     const savePost = () =>{
@@ -67,14 +54,14 @@ export const FinishPost = ({getLoggedInUser}) =>{
         //         console.log(res)
         //     })
 
-        const completed = {...selectedPost}
+        const completed = {...post}
         completed.isComplete = true
         completePost(completed).then(navigate("/"))
         console.log(completed)
     }
 
     useEffect(()=>{
-        getPostByUserId(userId)
+        getPostById(postId)
             .then(res => updatePost(res))
     },[])
     
@@ -85,19 +72,13 @@ export const FinishPost = ({getLoggedInUser}) =>{
         <div>
             <form>
                 <fieldset>
-                    <select value={post.id} onChange={handleSelect}>
-                        <option>Select an open prompt</option>
-                        {post.map(mappedPost => mappedPost.isComplete === false? <option key={mappedPost.id} id={mappedPost.id} value={mappedPost.id}>{mappedPost.prompt.prompt}</option> : "")}
-                    </select>
-                </fieldset>
-                <fieldset>
                     <p>image placeholder</p>
-                    <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={selectedPost.prompt?.prompt} disabled={true}></input>
-                    <input type="text" id="mood" placeholder="mood" defaultValue={selectedPost.emotion?.emotion} disabled={true}></input>
+                    <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={post.prompt?.prompt} disabled={true}></input>
+                    <input type="text" id="mood" placeholder="mood" defaultValue={post.emotion?.emotion} disabled={true}></input>
                     <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
                     {/* <input type="file" id="image" onChange={handleFile}></input> */}
-                    <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
                     <input type="text" id="image" onChange={controlInput} placeholder="image url"></input>
+                    <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
                     <button type="button" onClick={savePost}>Submit</button>
                 </fieldset>
             </form>

@@ -18,7 +18,7 @@ export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
         </div>
 
         <div className="navbar_user_functions">
-        {`Hello, ${user.name}`}
+        {`Hello, ${user?.name}`}
         <button onClick={clearUser}>Logout</button>
       </div>
       </div>
