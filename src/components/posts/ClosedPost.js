@@ -6,6 +6,7 @@ export const ClosedPost = ({post, comments}) =>{
 
     const [seeComments, updateSeeComments] = useState(false)
 
+    //an array of components that are rendered depending on whether seeComments is true or false
     const componentArr = [
       <>
       <div className="card_container">

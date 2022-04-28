@@ -9,23 +9,17 @@ import { Settings } from "../../Settings.js"
 
 export const CompletePost = ({getLoggedInUser}) =>{
 
+    //grabs the postID from the url and saves it in postID
     const {postId} = useParams()
     const navigate = useNavigate()
 
+
     const userId = getLoggedInUser()
+    //Stores a file upload when actually in use. Feature still in development.
     const [file, updateFile] = useState()
     const [post, updatePost] = useState([])
-    const [selectedPost, updateSelected] = useState({
-        userId: getLoggedInUser(),
-        id: "",
-        description: "",
-        title: "",
-        image: "",
-        isComplete: false,
-        promptId : "",
-        emotionId: ""
-    })
 
+    //feature in development
     const handleFile = (event) =>{
         updateFile(event.target.files)
 

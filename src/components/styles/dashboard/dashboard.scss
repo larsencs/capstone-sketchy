@@ -24,6 +24,9 @@
 #other_section{
     width: 20%;
 }
+#other_post_nav{
+    cursor: pointer;
+}
 //This is targetting the sections that contain the three kinds of cards
 .prompts_section{
     @include flexCenter(column, none);

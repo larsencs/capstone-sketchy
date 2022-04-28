@@ -20,6 +20,7 @@ export const AllOtherPost = ({post, getLoggedInUser}) =>{
             .then(updateLeaveComment(false))
     }
 
+    //handles changes to input fields and updates state with the additional values
     const handleChange = (event) =>{
         const tempCom = {...comment}
 
@@ -28,6 +29,7 @@ export const AllOtherPost = ({post, getLoggedInUser}) =>{
         updateComment(tempCom)
     }
 
+    //An array of React components which are rendered depending on if leaveComment is true or false
     const componentArr = [<div>
         <div className="post_div" style={{backgroundImage:`url(${post.image})`} }></div>
         <div>

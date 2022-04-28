@@ -23,6 +23,10 @@
   width: 20%;
 }
 
+#other_post_nav {
+  cursor: pointer;
+}
+
 .prompts_section {
   display: -webkit-box;
   display: -ms-flexbox;

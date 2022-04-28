@@ -1,0 +1,33 @@
+@import "../variables/Variables.scss";
+
+.form_container{
+    @include backgroundTexture();
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+
+    .form_box{
+        margin-top: 10vh;
+        @include flexCenter(column, none);
+        width: 30%;
+        fieldset{
+            @include flexCenter(column, none);
+            width: 100%;
+
+
+        }
+    }
+
+}
+.post_image{
+    width: 100%;
+    height: 30vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    img{
+        width: 100%;
+    }
+    // background-color: aqua;
+}

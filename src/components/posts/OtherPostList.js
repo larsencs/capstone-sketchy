@@ -11,7 +11,7 @@ export const OtherPostList = ({getLoggedInUser, post}) =>{
     return (
       <>
         <div className="title_div">
-        <h3 onClick={() => navigate("/other_posts")}>Other Posts</h3>
+        <h3 onClick={() => navigate("/other_posts")} id="other_post_nav">Other Posts</h3>
         <div className="post_container">
           {post.map((mappedPost) =>
             mappedPost.userId !== userId && mappedPost.isComplete ? (
