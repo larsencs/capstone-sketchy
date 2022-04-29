@@ -14,7 +14,7 @@ export const OpenPostList = ({getLoggedInUser, post}) =>{
         <div>
           {post.map((mappedPost) =>
             mappedPost.userId === userId && mappedPost.isComplete === false ? (
-              <OpenPost key={mappedPost.id} post={mappedPost} />
+              <OpenPost key={mappedPost.id}  post={mappedPost} />
             ) : (
               ""
             )

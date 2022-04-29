@@ -3,11 +3,11 @@ import {Settings} from "../../Settings.js"
 const dataURL = `${Settings.proxy}https://api.cloudinary.com/v1_1/${Settings.cloudName}/image/`
 
 export const uploadImage = (imageFile) =>{
-    return fetch(`${dataURL}/upload/${imageFile}`,{
+    console.log("fetch", imageFile)
+    return fetch(`${dataURL}upload/${imageFile}`,{
         method: "POST",
         headers: {
-            "Content-Type" : "application/json",
-            "Access-Control-Allow-Origin" : "*"
+            "Content-Type" : "application/json"
         },
         body: JSON.stringify(imageFile)
     }).then(res => console.log(res))
