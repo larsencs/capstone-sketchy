@@ -4,7 +4,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100vh;
   background: url(../../../../public/images/plain-paper.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -16,8 +16,9 @@
   margin: .5em;
   border: 1px solid black;
   width: 20%;
-  height: 30%;
-  background-size: cover;
+  height: 100%;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 /*# sourceMappingURL=post.css.map */

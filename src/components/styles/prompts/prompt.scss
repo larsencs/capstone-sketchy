@@ -22,7 +22,10 @@
         h1{
             @include scribblesFont();
             font-size: 40pt;
-            @include textDec();
+            color: #fff;
+            text-shadow: 0px 0px 5px black,
+            0px 0px 10px black;
+            // @include textDec();
             text-align: center;
             
         }

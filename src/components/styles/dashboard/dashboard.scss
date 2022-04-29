@@ -5,6 +5,7 @@
    
     @include backgroundTexture();
     display:flex;
+    min-height: 100vh;
 
     section{
         // @include borders();
@@ -60,7 +61,7 @@
     // @include shadow();
     @include cardBackground();
     margin: 5px;
-    height: 12vh;
+    height: 11.5vh;
 
     div{
         display:flex;
@@ -101,8 +102,10 @@
 }
 
 .finished_picture{
-    background-size: cover;
+    background-color: black;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .closed_prompt{

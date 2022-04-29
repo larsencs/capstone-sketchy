@@ -3,7 +3,7 @@
 .all_post_container{
     display:flex;
     flex-wrap: wrap;
-    height: 100vh;
+    min-height: 100vh;
     @include backgroundTexture();
 
     .post_div{
@@ -11,8 +11,9 @@
         margin: .5em;
         border: 1px solid black;
         width: 20%;
-        height: 30%;
-        background-size: cover;
+        height: 100%;
+        background-size: contain;
         background-repeat: no-repeat;
+        background-position: center;
     }
 }

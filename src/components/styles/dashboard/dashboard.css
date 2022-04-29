@@ -5,6 +5,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-height: 100vh;
 }
 
 .dashboard_main_container section {
@@ -84,7 +85,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5px;
-  height: 12vh;
+  height: 11.5vh;
 }
 
 .open_prompts div {
@@ -138,8 +139,10 @@
 }
 
 .finished_picture {
-  background-size: cover;
+  background-color: black;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .closed_prompt {

@@ -4,6 +4,7 @@ import { getPromptById } from "../modules/PromptManager"
 import { useNavigate, useParams } from "react-router-dom"
 import { uploadImage } from "../api/cloudinary"
 import { Settings } from "../../Settings.js"
+import "../styles/forms/Complete.css"
 
 
 
@@ -17,7 +18,7 @@ export const CompletePost = ({getLoggedInUser}) =>{
     const userId = getLoggedInUser()
     //Stores a file upload when actually in use. Feature still in development.
     const [file, updateFile] = useState()
-    const [post, updatePost] = useState([])
+    const [post, updatePost] = useState({})
 
     //feature in development
     const handleFile = (event) =>{
@@ -48,8 +49,16 @@ export const CompletePost = ({getLoggedInUser}) =>{
         //         console.log(res)
         //     })
 
-        const completed = {...post}
-        completed.isComplete = true
+        const completed = {
+            id: post.id,
+            userId: post.userId,
+            title: post.title,
+            description: post.description,
+            image: post.image,
+            promptId: post.promptId,
+            emotionId: post.emotionId,
+            isComplete: true
+        }
         completePost(completed).then(navigate("/"))
         console.log(completed)
     }
@@ -63,10 +72,10 @@ export const CompletePost = ({getLoggedInUser}) =>{
     return(
         <>
 
-        <div>
-            <form>
-                <fieldset>
-                    <p>image placeholder</p>
+        <div className="form_container">
+            <form className="form_box">
+                <fieldset className="prompts_field">
+                <div className="post_image" style={{backgroundImage: `url(${post.image})`}}></div>
                     <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={post.prompt?.prompt} disabled={true}></input>
                     <input type="text" id="mood" placeholder="mood" defaultValue={post.emotion?.emotion} disabled={true}></input>
                     <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
