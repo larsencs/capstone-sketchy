@@ -67,7 +67,17 @@ export const FinishPost = ({getLoggedInUser}) =>{
         //         console.log(res)
         //     })
 
-        const completed = {...selectedPost}
+        const completed = {
+            id: selectedPost.id,
+            userId: selectedPost.userId,
+            title: selectedPost.title,
+            description: selectedPost.description,
+            image: selectedPost.image,
+            promptId: selectedPost.promptId,
+            emotionId: selectedPost.emotionId,
+            isComplete: true
+        }
+        
         completed.isComplete = true
         completePost(completed).then(navigate("/"))
         console.log(completed)
