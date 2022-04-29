@@ -24,15 +24,18 @@ export const Prompts = ({getLoggedInUser}) =>{
     },[])
 
     const sortArr = (arr) =>{
+      
       const sortedArr = []
       for(let i = 0; i < arr.length; i++){
         for(let j = 0; j < arr[i].emotionId.length; j++){
-            if(arr[i].emotionId[j] === parseInt(promptId)){
-              sortedArr.push(arr[i])
-            }
+          let tempArr = []
+            tempArr.push(parseInt(arr[i].emotionId.split(",")[j]))
+            arr[i].emotionId += tempArr
+            console.log(tempArr)
         }
       }
-      randomize(sortedArr)
+      console.log(sortedArr)
+      // randomize(sortedArr)
     }
 
     const randomize = (arr) =>{
