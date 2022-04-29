@@ -59,6 +59,7 @@ export const CompletePost = ({getLoggedInUser}) =>{
             emotionId: post.emotionId,
             isComplete: true
         }
+        
         completePost(completed).then(navigate("/"))
         console.log(completed)
     }
@@ -75,7 +76,7 @@ export const CompletePost = ({getLoggedInUser}) =>{
         <div className="form_container">
             <form className="form_box">
                 <fieldset className="prompts_field">
-                <div className="post_image" style={{backgroundImage: `url(${post.image})`}}></div>
+                <div className="post_image" style={{ backgroundImage: `url(${post.image})` }}></div>
                     <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={post.prompt?.prompt} disabled={true}></input>
                     <input type="text" id="mood" placeholder="mood" defaultValue={post.emotion?.emotion} disabled={true}></input>
                     <input type="text" id="title" placeholder="title" onChange={controlInput}></input>

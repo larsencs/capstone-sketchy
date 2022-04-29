@@ -41,7 +41,7 @@ export const ClosedPost = ({post, comments}) =>{
       ></div>
       <div className="post_comments">
         <h4>Comments</h4>
-        {comments.map(r => r.postId === post.id ? <p>{r.comment}</p> : "") }
+        {comments.map(r => r.postId === post.id ? <p key={r.id}>{r.comment}</p> : "") }
       </div>
     </div>
     <div className="closed_prompt_btns">

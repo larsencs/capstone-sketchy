@@ -68,7 +68,17 @@ export const FinishPost = ({getLoggedInUser}) =>{
         //         console.log(res)
         //     })
 
-        const completed = {...selectedPost}
+        const completed = {
+            id: selectedPost.id,
+            userId: selectedPost.userId,
+            title: selectedPost.title,
+            description: selectedPost.description,
+            image: selectedPost.image,
+            promptId: selectedPost.promptId,
+            emotionId: selectedPost.emotionId,
+            isComplete: true
+        }
+        
         completed.isComplete = true
         if(selectedPost.title && selectedPost.description && selectedPost.image && selectedPost.prompt){
             completePost(completed).then(navigate("/"))
@@ -87,69 +97,69 @@ export const FinishPost = ({getLoggedInUser}) =>{
 
     return (
       <>
-        <div className="form_container">
-          <form className="form_box">
-            <fieldset className="prompts_field">
-              <div className="post_image" style={{backgroundImage: `url(${selectedPost.image})`}}></div>
-              <select value={post.id} onChange={handleSelect}>
-                <option selected={true} disabled={true}>
-                  Select an open prompt
-                </option>
-                {post.map((mappedPost) =>
-                  mappedPost.isComplete === false ? (
-                    <option
-                      key={mappedPost.id}
-                      id={mappedPost.id}
-                      value={mappedPost.id}
-                    >
-                      {mappedPost.prompt.prompt}
-                    </option>
-                  ) : (
-                    ""
-                  )
-                )}
-              </select>
-            </fieldset>
-            <fieldset>
-              <input
-                type="text"
-                id="prompt"
-                placeholder="chosen prompt"
-                defaultValue={selectedPost.prompt?.prompt}
-                disabled={true}
-              ></input>
-              <input
-                type="text"
-                id="mood"
-                placeholder="mood"
-                defaultValue={selectedPost.emotion?.emotion}
-                disabled={true}
-              ></input>
-              <input
-                type="text"
-                id="title"
-                placeholder="title"
-                onChange={controlInput}
-              ></input>
-              {/* <input type="file" id="image" onChange={handleFile}></input> */}
-              <input
-                type="text"
-                id="description"
-                placeholder="description"
-                onChange={controlInput}
-              ></input>
-              <input
-                type="text"
-                id="image"
-                onChange={controlInput}
-                placeholder="image url"
-              ></input>
-              <button type="button" onClick={savePost}>
-                Submit
-              </button>
-            </fieldset>
-          </form>
-        </div>
-      </>
+            <div className="form_container">
+                <form className="form_box">
+                    <fieldset className="prompts_field">
+                        <div className="post_image" style={{ backgroundImage: `url(${selectedPost.image})` }}></div>
+                        <select value={post.id} onChange={handleSelect}>
+                            <option selected={true} disabled={true}>
+                                Select an open prompt
+                            </option>
+                            {post.map((mappedPost) =>
+                                mappedPost.isComplete === false ? (
+                                    <option
+                                        key={mappedPost.id}
+                                        id={mappedPost.id}
+                                        value={mappedPost.id}
+                                    >
+                                        {mappedPost.prompt.prompt}
+                                    </option>
+                                ) : (
+                                    ""
+                                )
+                            )}
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <input
+                            type="text"
+                            id="prompt"
+                            placeholder="chosen prompt"
+                            defaultValue={selectedPost.prompt?.prompt}
+                            disabled={true}
+                        ></input>
+                        <input
+                            type="text"
+                            id="mood"
+                            placeholder="mood"
+                            defaultValue={selectedPost.emotion?.emotion}
+                            disabled={true}
+                        ></input>
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="title"
+                            onChange={controlInput}
+                        ></input>
+                        {/* <input type="file" id="image" onChange={handleFile}></input> */}
+                        <input
+                            type="text"
+                            id="description"
+                            placeholder="description"
+                            onChange={controlInput}
+                        ></input>
+                        <input
+                            type="text"
+                            id="image"
+                            onChange={controlInput}
+                            placeholder="image url"
+                        ></input>
+                        <button type="button" onClick={savePost}>
+                            Submit
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+        </>
     );
 }
