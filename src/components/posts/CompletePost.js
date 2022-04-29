@@ -48,8 +48,17 @@ export const CompletePost = ({getLoggedInUser}) =>{
         //         console.log(res)
         //     })
 
-        const completed = {...post}
-        completed.isComplete = true
+        const completed = {
+            id: post.id,
+            userId: post.userId,
+            title: post.title,
+            description: post.description,
+            image: post.image,
+            promptId: post.promptId,
+            emotionId: post.emotionId,
+            isComplete: true
+        }
+        
         completePost(completed).then(navigate("/"))
         console.log(completed)
     }
