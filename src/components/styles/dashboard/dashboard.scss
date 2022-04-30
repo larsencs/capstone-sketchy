@@ -57,7 +57,8 @@
 //this is targetting the individual open prompt cards
 .open_prompts{
     @include flexCenter(column, center);    
-    border: 1px solid black;
+    // border: 1px solid black;
+    @include borders();
     // @include shadow();
     @include cardBackground();
     margin: 5px;
@@ -75,10 +76,10 @@
 .card_container{
     // @include shadow();
     @include textDec();
-    
+    @include borders();
     height: 30vh;
     @include waterColor();
-    border: 1px solid black;
+    // border: 1px solid black;
     @include flexCenter(row, none);
     margin: 5px;
     button{

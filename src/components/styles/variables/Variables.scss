@@ -103,6 +103,9 @@ $scared: #b6772e;
 
 @mixin borders {
     border: 1px solid black;
+    border-image: url(/public/images/border.png);
+    border-image-width: inherit;
+    border-image-repeat: inherit;
 }
 
 @mixin shadow {

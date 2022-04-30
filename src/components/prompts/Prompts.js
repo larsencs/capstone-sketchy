@@ -8,7 +8,7 @@ import "../styles/prompts/prompt.css"
 
 export const Prompts = ({getLoggedInUser}) =>{
 
-    const [prompt, updatePrompt] = useState([])
+    const [prompt, updatePrompt] = useState({})
     const [emoPrompt, updateEmoPrompt] = useState([])
     const navigate = useNavigate()
     let index = Math.floor(Math.random()* emoPrompt?.length);

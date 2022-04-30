@@ -9,6 +9,10 @@
   display: -ms-flexbox;
   display: flex;
   border: 1px solid black;
+  -o-border-image: url(/public/images/border.png);
+     border-image: url(/public/images/border.png);
+  border-image-width: inherit;
+  border-image-repeat: inherit;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
