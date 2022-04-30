@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import { useLocation } from "react-router-dom"
-import { getPromptByMood, getPrompts } from "../modules/PromptManager"
+import { getPromptByMood, getPrompts, getEmoPrompts, getPromptById } from "../modules/PromptManager"
 import { savePost } from "../modules/PostManager"
 import { useNavigate } from "react-router-dom"
 import "../styles/prompts/prompt.css"
@@ -8,55 +8,36 @@ import "../styles/prompts/prompt.css"
 
 export const Prompts = ({getLoggedInUser}) =>{
 
-    const [prompt, updatePrompt] = useState()
+    const [prompt, updatePrompt] = useState([])
+    const [emoPrompt, updateEmoPrompt] = useState([])
     const navigate = useNavigate()
+    let index = Math.floor(Math.random()* emoPrompt?.length);
     
     //This is importing the state from navigate in Generate and saving it as an object named prompt
     const state = useLocation()
-    const promptId = state.state.prompt.emotionId
+    const emotionId = state.state.prompt.emotionId
     const userId = getLoggedInUser()
 
     useEffect(()=>{
-        getPrompts().then(res => { 
-          sortArr(res)
+      getEmoPrompts(emotionId).then(res => updateEmoPrompt(res))
+        .then(console.log(emoPrompt))
 
-        })
     },[])
 
-    const sortArr = (arr) =>{
-      
-      const sortedArr = []
-      for(let i = 0; i < arr.length; i++){
-        for(let j = 0; j < arr[i].emotionId.length; j++){
-          let tempArr = []
-            tempArr.push(parseInt(arr[i].emotionId.split(",")[j]))
-            arr[i].emotionId += tempArr
-            console.log(tempArr)
-        }
-      }
-      console.log(sortedArr)
-      // randomize(sortedArr)
-    }
-
-    const randomize = (arr) =>{
-      let random;
-      let index = Math.floor(Math.random() * parseInt(arr.length))
-
-        random = arr[index]
-
-      
-      updatePrompt(random)
-    }
+    useEffect(()=>{
+      getPromptById(parseInt(emoPrompt[index]?.promptId)).then( res => updatePrompt(res))
+        .then(console.log(emoPrompt))
+    },[emoPrompt])
 
     const handleSave = () =>{
         const post = {
             userId: userId,
             promptId: prompt?.id,
-            emotionId: parseInt(promptId),
+            emotionId: parseInt(emotionId),
             isComplete: false
 
         }
-        console.log(post)
+        // console.log(post)
         savePost(post).then( navigate("/"))
     }
 
