@@ -18,7 +18,7 @@ export const CompletePost = ({getLoggedInUser}) =>{
     const userId = getLoggedInUser()
     //Stores a file upload when actually in use. Feature still in development.
     const [file, updateFile] = useState()
-    const [post, updatePost] = useState([])
+    const [post, updatePost] = useState({})
 
     //feature in development
     const handleFile = (event) =>{

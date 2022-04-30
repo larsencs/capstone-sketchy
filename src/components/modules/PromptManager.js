@@ -9,3 +9,13 @@ export const getPromptByMood = (id) =>{
         .then(res => res.json())
 }
 
+export const getPrompts = () =>{
+    return fetch(`${dataURL}/prompts/`)
+        .then(res => res.json())
+}
+
+export const getEmoPrompts = (emotionId) =>{
+    return fetch(`${dataURL}/emoPrompts?emotionId=${emotionId}`)
+        .then(res => res.json())
+}
+
