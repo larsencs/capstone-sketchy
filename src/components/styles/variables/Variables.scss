@@ -51,6 +51,12 @@ $scared: #b6772e;
     background-repeat: no-repeat;
 }
 
+@mixin inked {
+    background: url(../../../../public/images/inked.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 @mixin buttonGlow($color) {
         
         &:hover{

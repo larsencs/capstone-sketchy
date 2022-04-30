@@ -24,7 +24,28 @@
   height: 100vh;
 }
 
-.gen_container div {
+.gen_container .gen_btns_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100%;
+}
+
+.gen_container p {
+  margin-left: 1em;
+  font-size: larger;
+  color: #fff;
+  text-shadow: 0px 0px 1px black, 0px 0px 5px black;
+}
+
+.gen_container section {
   -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
           box-shadow: 0px 0px 10px black, 0px 0px 15px black;
   display: -webkit-box;
@@ -73,6 +94,16 @@
   border: none;
 }
 
+.gen_container .button_on {
+  margin-left: 1em;
+  -webkit-box-shadow: 0px 0px 5px white, 0px 0px 10px white, 0px 0px 15px white;
+          box-shadow: 0px 0px 5px white, 0px 0px 10px white, 0px 0px 15px white;
+}
+
+.gen_container .button_off {
+  margin-left: 1em;
+}
+
 .gen_container button {
   cursor: pointer;
   margin-left: 5px;
@@ -84,6 +115,16 @@
   margin-right: 2em;
 }
 
+.gen_container .madness_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1em 0em;
+}
+
 .gen_container label {
   color: #fff;
 }
@@ -93,5 +134,24 @@
   background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#madness {
+  margin-top: 1em;
+  height: 1.5em;
+  width: 8em;
+  font-family: 'Scribbles';
+  src: url("../fonts/Scribbles-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+  word-spacing: 15px;
+  background: url(../../../../public/images/inked.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 20pt;
+  border: none;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px black;
+  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
 }
 /*# sourceMappingURL=generate.css.map */

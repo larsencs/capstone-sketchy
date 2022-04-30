@@ -79,11 +79,6 @@
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  border: 1px solid black;
-  -o-border-image: url(/public/images/border.png);
-     border-image: url(/public/images/border.png);
-  border-image-width: inherit;
-  border-image-repeat: inherit;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../../../../public/images/paper-four.jpg);
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../../../public/images/paper-four.jpg);
   background-size: cover;
@@ -106,11 +101,6 @@
 .card_container {
   color: #fff;
   text-shadow: 0px 0px 5px black;
-  border: 1px solid black;
-  -o-border-image: url(/public/images/border.png);
-     border-image: url(/public/images/border.png);
-  border-image-width: inherit;
-  border-image-repeat: inherit;
   height: 30vh;
   background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
@@ -231,6 +221,11 @@
           box-shadow: 0px 0px 5px black, 0px 0px 10px #b6772e, 0px 0px 15px #b6772e;
 }
 
+.closed_prompt_btns #happy_btn:hover {
+  -webkit-box-shadow: 0px 0px 5px black, 0px 0px 10px #d4d639, 0px 0px 15px #d4d639;
+          box-shadow: 0px 0px 5px black, 0px 0px 10px #d4d639, 0px 0px 15px #d4d639;
+}
+
 .other_posts {
   color: #fff;
   text-shadow: 0px 0px 5px black;
@@ -269,6 +264,11 @@
 #scary {
   color: #fff;
   text-shadow: 0px 0px 5px black, 0px 0px 10px #b6772e, 0px 0px 15px #b6772e;
+}
+
+#happy {
+  color: #fff;
+  text-shadow: 0px 0px 5px black, 0px 0px 10px #d4d639, 0px 0px 15px #d4d639;
 }
 
 #prompt_text {

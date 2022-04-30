@@ -58,7 +58,7 @@
 .open_prompts{
     @include flexCenter(column, center);    
     // border: 1px solid black;
-    @include borders();
+    // @include borders();
     // @include shadow();
     @include cardBackground();
     margin: 5px;
@@ -76,7 +76,7 @@
 .card_container{
     // @include shadow();
     @include textDec();
-    @include borders();
+    // @include borders();
     height: 30vh;
     @include waterColor();
     // border: 1px solid black;
@@ -148,6 +148,9 @@
         #scary_btn{
             @include buttonGlow($scared);
         }
+        #happy_btn{
+            @include buttonGlow($happy);
+        }
 }
 .other_posts{
     @include textDec();
@@ -176,6 +179,9 @@
 }
 #scary{
     @include emotions($scared);
+}
+#happy{
+    @include emotions($happy);
 }
 #prompt_text{
     color: white;

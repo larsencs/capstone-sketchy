@@ -16,17 +16,16 @@ export const Prompts = ({getLoggedInUser}) =>{
     //This is importing the state from navigate in Generate and saving it as an object named prompt
     const state = useLocation()
     const emotionId = state.state.prompt.emotionId
+    const selection = state.state.selection
     const userId = getLoggedInUser()
 
     useEffect(()=>{
-      getEmoPrompts(emotionId).then(res => updateEmoPrompt(res))
-        .then(console.log(emoPrompt))
+      getEmoPrompts(emotionId).then(res => updateEmoPrompt(res)).then(console.log(state))
 
     },[])
 
     useEffect(()=>{
       getPromptById(parseInt(emoPrompt[index]?.promptId)).then( res => updatePrompt(res))
-        .then(console.log(emoPrompt))
     },[emoPrompt])
 
     const handleSave = () =>{
@@ -37,7 +36,7 @@ export const Prompts = ({getLoggedInUser}) =>{
             isComplete: false
 
         }
-        // console.log(post)
+        
         savePost(post).then( navigate("/"))
     }
 

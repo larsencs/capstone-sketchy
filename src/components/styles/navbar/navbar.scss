@@ -1,6 +1,7 @@
 @import "../variables/Variables.scss";
 
 .navbar_container{
+    margin: 0px;
     @include shadow();
     @include navbarBackground();
     height: 2em;
