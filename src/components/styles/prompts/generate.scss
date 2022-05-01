@@ -19,7 +19,8 @@
         font-size: larger;
         color: #fff;
         text-shadow: 0px 0px 1px black,
-            0px 0px 5px black;
+            0px 0px 5px black,
+            0px 0px 10px black;
     }
     section{
         @include shadow();
@@ -47,9 +48,11 @@
         box-shadow: 0px 0px 5px white,
         0px 0px 10px white,
         0px 0px 15px white;
+        transition: all ease-in .4s;
     }
     .button_off{
         margin-left: 1em;
+        transition: all ease-out .4s;
     }
     button{
         
@@ -75,6 +78,33 @@
     @include waterColor();
 }
 #madness{
+    margin-top: 1em;
+    height: 1.5em;
+    width: 8em;
+    @include scribblesFont();
+    @include caution();
+    font-size: 20pt;
+    border: none;
+    text-shadow: 0px 0px 5px black,
+        0px 0px 10px black;
+    @include shadow();
+    transition: all ease-in-out 1s;
+}
+#madness:hover{
+    margin-top: 1em;
+    height: 1.5em;
+    width: 8em;
+    @include scribblesFont();
+    @include cautionHover();
+    font-size: 20pt;
+    border: none;
+    text-shadow: 0px 0px 5px black,
+        0px 0px 10px black;
+    @include shadow();
+    
+
+}
+#generate{
     margin-top: 1em;
     height: 1.5em;
     width: 8em;

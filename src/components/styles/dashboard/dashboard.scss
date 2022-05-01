@@ -129,27 +129,35 @@
     justify-content: flex-end;
     button{
         @include styleButtons();
+        transition: all ease-out .4s;
     }
         #angry_btn{
             @include buttonGlow($angry);
+            transition: all ease-in-out .4s;
         }
         #sad_btn{
             @include buttonGlow($sad);
+            transition: all ease-in-out .4s;
         }
         #anxious_btn{
             @include buttonGlow($anxious);
+            transition: all ease-in-out .4s;
         }
         #calm_btn{
             @include buttonGlow($calm);
+            transition: all ease-in-out .4s;
         }
         #neutral_btn{
             @include buttonGlow($neutral);
+            transition: all ease-in-out .4s;
         }
         #scary_btn{
             @include buttonGlow($scared);
+            transition: all ease-in-out .4s;
         }
         #happy_btn{
             @include buttonGlow($happy);
+            transition: all ease-in-out .4s;
         }
 }
 .other_posts{

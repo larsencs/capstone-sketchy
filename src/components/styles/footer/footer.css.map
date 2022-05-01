@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,WAAW,CAAA;EC2EP,UAAU,EAAE,+CAA+C;EAC3D,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;ED3E5B,MAAM,EAAE,GAAG;ECiHX,UAAU,EAAE,uCACM;CDhHrB",
+    "mappings": "AAEA,AAAA,WAAW,CAAA;ECuFP,UAAU,EAAE,+CAA+C;EAC3D,eAAe,EAAE,KAAK;EACtB,iBAAiB,EAAE,SAAS;EDvF5B,MAAM,EAAE,GAAG;EC6HX,UAAU,EAAE,uCACM;CD5HrB",
     "sources": [
         "footer.scss",
         "../variables/Variables.scss"

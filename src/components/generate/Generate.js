@@ -1,11 +1,14 @@
 import { GetMoods } from "../modules/MoodManager"
 import React, {useState, useEffect} from "react"
 import { useNavigate } from "react-router-dom"
-import { Prompts } from "../prompts/Prompts"
+import { getEmoPrompts } from "../modules/PromptManager"
+import { getPosts } from "../modules/PostManager"
 import "../styles/prompts/generate.css"
 
 export const Generate = () =>{
 
+    const [post, updatePost] = useState([])
+    const [emoPrompt, updateEmoPrompt] = useState([])
     const [mood, updateMood] = useState([])
     const [gen, updateGen] = useState({})
     const [happy, updateHappy] = useState(false)
@@ -32,6 +35,14 @@ export const Generate = () =>{
             .then(fetchedMood => updateMood(fetchedMood))
     },[])
 
+    useEffect(()=>{
+        getPosts().then(res => updatePost(res))
+    },[])
+
+    useEffect(()=>{
+        getEmoPrompts().then(res => updateEmoPrompt(res))
+    },[])
+
     const controlInput = (event) =>{
         const emotion = {...gen}
 
@@ -43,104 +54,56 @@ export const Generate = () =>{
     const controlBtn = (event) =>{
 
 
-      let target = event.target.id
-      
-      if(target === "happy"){
-        happy ? updateHappy(false) : updateHappy(true)
+      let target = event.target.id;
 
+      if (target === "happy") {
+        happy ? updateHappy(false) : updateHappy(true);
       }
-      if(target === "sad"){
-        sad ? updateSad(false) : updateSad(true)
-
+      if (target === "sad") {
+        sad ? updateSad(false) : updateSad(true);
       }
-      if(target === "angry"){
-        angry ? updateAngry(false) : updateAngry(true)
-
+      if (target === "angry") {
+        angry ? updateAngry(false) : updateAngry(true);
       }
-      if(target === "neutral"){
-        neutral ? updateNeutral(false) : updateNeutral(true)
-  
-
+      if (target === "neutral") {
+        neutral ? updateNeutral(false) : updateNeutral(true);
       }
-      if(target === "calm"){
-        calm ? updateCalm(false) : updateCalm(true)
-    
-
+      if (target === "calm") {
+        calm ? updateCalm(false) : updateCalm(true);
       }
-      if(target === "scared"){
-        scared ? updateScared(false) : updateScared(true)
-  
-
-
+      if (target === "scared") {
+        scared ? updateScared(false) : updateScared(true);
       }
-      if(target === "anxious"){
-        anxious ? updateAnxious(false) : updateAnxious(true)
-
-
-
+      if (target === "anxious") {
+        anxious ? updateAnxious(false) : updateAnxious(true);
       }
-      if(target === "pencil"){
-        pencil ? updatePencil(false) : updatePencil(true)
-
-
-
+      if (target === "pencil") {
+        pencil ? updatePencil(false) : updatePencil(true);
       }
-      if(target === "ink"){
-        ink ? updateInk(false) : updateInk(true)
-
-
-
+      if (target === "ink") {
+        ink ? updateInk(false) : updateInk(true);
       }
-      if(target === "paint"){
-        paint ? updatePaint(false) : updatePaint(true)
-
-
-
+      if (target === "paint") {
+        paint ? updatePaint(false) : updatePaint(true);
       }
-      if(target === "people"){
-        people ? updatePeople(false) : updatePeople(true)
-
-
-
+      if (target === "people") {
+        people ? updatePeople(false) : updatePeople(true);
       }
-      if(target === "places"){
-        places ? updatePlaces(false) : updatePlaces(true)
-  
-
-
+      if (target === "places") {
+        places ? updatePlaces(false) : updatePlaces(true);
       }
-      if(target === "things"){
-        things ? updateThings(false) : updateThings(true)
-
-
-
-      }
-      let selections = {
-        happy: happy,
-        sad: sad,
-        calm: calm,
-        angry: angry,
-        neutral: neutral,
-        anxious: anxious,
-        scared: scared,
-        pencil: pencil,
-        ink: ink,
-        paint: paint,
-        people: people,
-        places: places,
-        things: things
-      }
-
-      updateSelection(selections)
-      console.log(selection)
-
-        
+      if (target === "things") {
+        things ? updateThings(false) : updateThings(true);
+      }     
 
         
     }
 
     const handleClick = () =>{
         //Navigates to prompt and passes an object named state as a prop, so that prompt can utilize the results of generate
+
+        
+
         navigate("/prompt", { state:{prompt: gen, selections: selection}})
 
     }
@@ -178,7 +141,7 @@ export const Generate = () =>{
           </div>
           <div className="madness_btn">
             <button id="madness" type="button" >MADNESS</button>
-            <button id="madness" type="button" onClick={handleClick}>Generate</button>
+            <button id="generate" type="button" onClick={handleClick}>Generate</button>
             </div>
           </div>
             <form>

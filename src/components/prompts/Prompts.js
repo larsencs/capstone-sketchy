@@ -21,7 +21,6 @@ export const Prompts = ({getLoggedInUser}) =>{
 
     useEffect(()=>{
       getEmoPrompts(emotionId).then(res => updateEmoPrompt(res)).then(console.log(state))
-
     },[])
 
     useEffect(()=>{
