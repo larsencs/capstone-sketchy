@@ -14,8 +14,8 @@ export const getPrompts = () =>{
         .then(res => res.json())
 }
 
-export const getEmoPrompts = (emotionId) =>{
-    return fetch(`${dataURL}/emoPrompts?emotionId=${emotionId}`)
+export const getEmoPrompts = () =>{
+    return fetch(`${dataURL}/emoPrompts/`)
         .then(res => res.json())
 }
 

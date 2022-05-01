@@ -3,14 +3,16 @@ import React, {useState, useEffect} from "react"
 import { useNavigate } from "react-router-dom"
 import { getEmoPrompts } from "../modules/PromptManager"
 import { getPosts } from "../modules/PostManager"
+import { getPrompts } from "../modules/PromptManager"
 import "../styles/prompts/generate.css"
+import { Prompts } from "../prompts/Prompts"
 
 export const Generate = () =>{
 
-    const [post, updatePost] = useState([])
+    const [prompt, updatePrompt] = useState([])
     const [emoPrompt, updateEmoPrompt] = useState([])
     const [mood, updateMood] = useState([])
-    const [gen, updateGen] = useState({})
+    const [generated, updateGenerated] = useState()
     const [happy, updateHappy] = useState(false)
     const [sad, updateSad] = useState(false)
     const [neutral, updateNeutral] = useState(false)
@@ -24,6 +26,7 @@ export const Generate = () =>{
     const [things, updateThings] = useState(false)
     const [ink, updateInk] = useState(false)
     const [paint, updatePaint] = useState(false)
+    const [show, updateShow] = useState(false)
     const [selection, updateSelection] = useState({
 
     })
@@ -36,20 +39,20 @@ export const Generate = () =>{
     },[])
 
     useEffect(()=>{
-        getPosts().then(res => updatePost(res))
+        getPrompts().then(res => updatePrompt(res))
     },[])
 
     useEffect(()=>{
         getEmoPrompts().then(res => updateEmoPrompt(res))
     },[])
 
-    const controlInput = (event) =>{
-        const emotion = {...gen}
+    // const controlInput = (event) =>{
+    //     const emotion = {...gen}
 
-        emotion[event.target.id] = event.target.value
-        updateGen(emotion)
+    //     emotion[event.target.id] = event.target.value
+    //     updateGen(emotion)
 
-    }
+    // }
 
     const controlBtn = (event) =>{
 
@@ -58,53 +61,151 @@ export const Generate = () =>{
 
       if (target === "happy") {
         happy ? updateHappy(false) : updateHappy(true);
+        updateSelection(happy)
       }
       if (target === "sad") {
         sad ? updateSad(false) : updateSad(true);
+        updateSelection(sad)
       }
       if (target === "angry") {
         angry ? updateAngry(false) : updateAngry(true);
+        updateSelection(angry)
       }
       if (target === "neutral") {
         neutral ? updateNeutral(false) : updateNeutral(true);
+        updateSelection(neutral)
       }
       if (target === "calm") {
         calm ? updateCalm(false) : updateCalm(true);
+        updateSelection(calm)
       }
       if (target === "scared") {
         scared ? updateScared(false) : updateScared(true);
+        updateSelection(scared)
       }
       if (target === "anxious") {
         anxious ? updateAnxious(false) : updateAnxious(true);
+        updateSelection(anxious)
       }
       if (target === "pencil") {
         pencil ? updatePencil(false) : updatePencil(true);
+        updateSelection(pencil)
       }
       if (target === "ink") {
         ink ? updateInk(false) : updateInk(true);
+        updateSelection(ink)
       }
       if (target === "paint") {
         paint ? updatePaint(false) : updatePaint(true);
+        updateSelection(paint)
       }
       if (target === "people") {
         people ? updatePeople(false) : updatePeople(true);
+        updateSelection(people)
       }
       if (target === "places") {
         places ? updatePlaces(false) : updatePlaces(true);
+        updateSelection(places)
       }
       if (target === "things") {
         things ? updateThings(false) : updateThings(true);
-      }     
+        updateSelection(things)
+      }
+      updateState()
+    }
 
-        
+    const updateState = () =>{
+      const selections = {
+        happy: happy,
+        sad: sad,
+        calm: calm,
+        angry: angry,
+        neutral: neutral,
+        scared: scared,
+        anxious: anxious,
+        pencil: pencil,
+        ink: ink,
+        paint: paint,
+        people: people,
+        places: places,
+        things: things
+      }
+
+      updateSelection(selections)
+    }
+
+    const sortPosts = () =>{
+        let tempArr = []
+        let emoArr = []
+        let emoPromptArr = []
+        let sortedArr = []
+        // updateState()
+        if(happy === true){
+          tempArr.push("happy")
+        }
+        if(sad === true){
+          tempArr.push("sad")
+        }
+        if(calm === true){
+          tempArr.push("calm")
+        }
+        if(angry === true){
+          tempArr.push("angry")
+        }
+        if(neutral === true){
+          tempArr.push("neutral")
+        }
+        if(scared === true){
+          tempArr.push("scared")
+        }
+        if(anxious === true){
+          tempArr.push("anxious")
+        }
+
+        //this works
+        for(let emo of mood){
+          for(let temp of tempArr){
+            if(emo.emotion === temp){
+              emoArr.push(emo.id)
+            }
+          }
+        }
+        for(let emo of emoArr){
+          for(let emote of emoPrompt){
+            if(emo === emote.emotionId){
+              emoPromptArr.push(emote)
+            }
+          }
+        }
+        for(let emote of emoPromptArr){
+          for(let thing of prompt){
+            if(emote.promptId === thing.id){
+              sortedArr.push(thing)
+            }
+          }
+        }
+        let index = Math.floor(Math.random()*sortedArr.length)
+        const sorted = sortedArr[index]
+        updateGenerated(sorted)
+        console.log("emoprompt", emoPrompt)
+        console.log("emopromptarr", emoPromptArr)
+        console.log("sorted", sortedArr)
+        console.log("result", sortedArr[index] )
+        // console.log("sortedArr",tempArr)
+
+
+
+
+
     }
 
     const handleClick = () =>{
         //Navigates to prompt and passes an object named state as a prop, so that prompt can utilize the results of generate
 
-        
 
-        navigate("/prompt", { state:{prompt: gen, selections: selection}})
+        sortPosts();
+        // <Prompts prompt={prompt}/>
+        navigate("/prompt", { state:{prompt: generated}})
 
     }
 
@@ -147,17 +248,6 @@ export const Generate = () =>{
             <form>
             
               <fieldset>
-                <label htmlFor="mood_selector">How are you feeling?</label>
-                
-                <select id="emotionId" onChange={controlInput}>
-                <option selected={true} disabled={true}>Select an emotion</option>
-                  {mood.map((r) => (
-                    <option value={r.id} key={r.id}>
-                      {r.emotion}
-                    </option>
-                  ))}
-                </select>
-                
               </fieldset>
               
               

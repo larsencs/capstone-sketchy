@@ -41,6 +41,7 @@
         @include shadow();
     }
     fieldset{
+        height: 1em;
         border: none;
     }
     .button_on{
