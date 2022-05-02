@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 import "../styles/prompts/prompt.css"
 
 
-export const Prompts = ({getLoggedInUser, prompt, show, updateShow}) =>{
+export const Prompts = ({getLoggedInUser, prompt, show, setUpdateShow, emo}) =>{
 
     // const [prompt, updatePrompt] = useState({})
 
@@ -31,10 +31,19 @@ export const Prompts = ({getLoggedInUser, prompt, show, updateShow}) =>{
     // },[emoPrompt])
 
     const handleSave = () =>{
+      
+      let emotionId = []
+      let index = Math.floor(Math.random()* emotionId.length)
+
+      for(let emote of emo){
+        if(emote.promptId === prompt.id){
+          emotionId.push(emote.emotionId)
+        }
+      }
         const post = {
             userId: userId,
             promptId: prompt?.id,
-            // emotionId: parseInt(emotionId),
+            emotionId: emotionId[index],
             isComplete: false
 
         }
@@ -50,7 +59,7 @@ export const Prompts = ({getLoggedInUser, prompt, show, updateShow}) =>{
         <div id="prompt_div">
           <h1>{prompt?.prompt}</h1>
         </div>
-        <button onClick={() => updateShow(false)}>Generate</button>
+        <button onClick={() => setUpdateShow(false)}>Generate</button>
           <button type="button" onClick={handleSave}>
             Save
           </button>

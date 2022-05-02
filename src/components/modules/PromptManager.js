@@ -19,3 +19,8 @@ export const getEmoPrompts = () =>{
         .then(res => res.json())
 }
 
+export const getSentences = () =>{
+    return fetch(`${dataURL}/sentences`)
+        .then(res => res.json())
+}
+

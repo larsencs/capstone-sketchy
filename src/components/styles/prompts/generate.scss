@@ -74,6 +74,19 @@
 
     }
 }
+.generate_btn_div{
+    display:flex;
+    flex-direction: column;
+
+    p{
+        width: 10%;
+        // text-align: center;
+        align-self: center;
+        margin: 0px;
+        font-size:x-large;
+        // border: 1px solid black;
+    }
+}
 #image_placeholder{
     width: 100%;
     @include waterColor();
@@ -86,8 +99,8 @@
     @include caution();
     font-size: 20pt;
     border: none;
-    text-shadow: 0px 0px 5px black,
-        0px 0px 10px black;
+    text-shadow: 0px 0px 1px black,0px 0px 5px black,
+        0px 0px 10px black, 0px 0px 15px black;
     @include shadow();
     transition: all ease-in-out 1s;
 }
@@ -113,7 +126,7 @@
     @include inked();
     font-size: 20pt;
     border: none;
-    text-shadow: 0px 0px 5px black,
-        0px 0px 10px black;
+    text-shadow: 0px 0px 1px black,0px 0px 5px black,
+        0px 0px 10px black, 0px 0px 15px black;
     @include shadow();
 }

@@ -1,9 +1,8 @@
 import { GetMoods } from "../modules/MoodManager"
 import React, {useState, useEffect} from "react"
 import { useNavigate } from "react-router-dom"
-import { getEmoPrompts } from "../modules/PromptManager"
+import { getEmoPrompts, getSentences, getPrompts } from "../modules/PromptManager"
 import { getPosts } from "../modules/PostManager"
-import { getPrompts } from "../modules/PromptManager"
 import "../styles/prompts/generate.css"
 import { Prompts } from "../prompts/Prompts"
 
@@ -12,6 +11,8 @@ export const Generate = ({getLoggedInUser}) =>{
     const [prompt, updatePrompt] = useState([])
     const [emoPrompt, updateEmoPrompt] = useState([])
     const [mood, updateMood] = useState([])
+    const [sentences, updateSentences] = useState([])
+    const [sortedPrompts, updateSortedPrompts] = useState([])
     const [generated, updateGenerated] = useState()
     const [happy, updateHappy] = useState(false)
     const [sad, updateSad] = useState(false)
@@ -44,6 +45,10 @@ export const Generate = ({getLoggedInUser}) =>{
 
     useEffect(()=>{
         getEmoPrompts().then(res => updateEmoPrompt(res))
+    },[])
+
+    useEffect(()=>{
+      getSentences().then( res => updateSentences(res))
     },[])
 
     // const controlInput = (event) =>{
@@ -139,7 +144,6 @@ export const Generate = ({getLoggedInUser}) =>{
         let emoArr = []
         let emoPromptArr = []
         let sortedArr = []
-        // updateState()
         if(happy === true){
           tempArr.push("happy")
         }
@@ -186,21 +190,33 @@ export const Generate = ({getLoggedInUser}) =>{
         }
         let index = Math.floor(Math.random()*sortedArr.length)
         const sorted = sortedArr[index]
+        const madnessSort = sortedArr
         updateGenerated(sorted)
-        console.log("emoprompt", emoPrompt)
-        console.log("emopromptarr", emoPromptArr)
-        console.log("sorted", sortedArr)
-        console.log("result", sortedArr[index] )
-        // console.log("sortedArr",tempArr)
-
-
-
-
+        console.log("madnessSort", madnessSort)
+        updateSortedPrompts(madnessSort)
 
     }
 
-    const nav = () =>{
-      navigate("/prompt", { state:{prompt: generated?.prompt}})
+    const sortMadness = () =>{
+      console.log("in madness", sortedPrompts)
+      const indexOne = Math.floor(Math.random()* sortedPrompts.length)
+      const indexTwo = Math.floor(Math.random()* sortedPrompts.length)
+      const madnessIndex = Math.floor(Math.random() * sentences.length)
+
+      const sentence = sentences[madnessIndex]
+
+      if(sentence.fragmentTwo === "" || sentence.fragmentOne === ""){
+        sentence.insertOne = sortedPrompts[indexOne]?.prompt
+      }else{
+        sentence.insertOne = sortedPrompts[indexOne]?.prompt
+        sentence.insertTwo = sortedPrompts[indexTwo]?.prompt
+      }
+
+      const finishedSentence = {
+        "prompt" : sentence.fragmentOne + sentence.insertOne + sentence.fragmentTwo + sentence.insertTwo
+      }
+      updateGenerated(finishedSentence)
+
     }
 
     const handleClick = () =>{
@@ -213,6 +229,12 @@ export const Generate = ({getLoggedInUser}) =>{
         // <Prompts prompt={prompt}/>
         
 
+    }
+
+    const handleMadness = () =>{
+      sortPosts();
+      sortMadness()
+      updateShow(true)
     }
 
     const componentArr = [
@@ -245,10 +267,13 @@ export const Generate = ({getLoggedInUser}) =>{
         <button onClick={controlBtn} id="places" className={ places ? "button_on" : "button_off"} value={places}>Places</button>
         <button onClick={controlBtn} id="things" className={ things ? "button_on" : "button_off"} value={things}>Things</button>
       </div>
+      <div className="generate_btn_div">
+        <p>Generate</p>
       <div className="madness_btn">
-        <button id="madness" type="button" >MADNESS</button>
-        <button id="generate" type="button" onClick={handleClick}>Generate</button>
+        <button id="madness" type="button" onClick={handleMadness}>MADNESS</button>
+        <button id="generate" type="button" onClick={handleClick}>MUNDANE</button>
         </div>
+      </div>
       </div>
         <form>
         
@@ -262,7 +287,7 @@ export const Generate = ({getLoggedInUser}) =>{
       
       
     </section>,
-    <Prompts prompt={generated} getLoggedInUser={getLoggedInUser} show={show} updateShow={updateShow}/>
+    <Prompts prompt={generated} getLoggedInUser={getLoggedInUser} show={show} setUpdateShow={updateShow} emo={emoPrompt}/>
     ]
 
     return (

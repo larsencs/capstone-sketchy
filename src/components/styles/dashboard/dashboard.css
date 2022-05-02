@@ -5,11 +5,57 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   min-height: 100vh;
 }
 
 .dashboard_main_container section {
   margin: 1em;
+}
+
+.dashboard_prompts_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.dashboard_titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dashboard_titles h3 {
+  font-family: 'Scribbles';
+  src: url("../fonts/Scribbles-Regular.woff");
+  font-weight: normal;
+  font-style: normal;
+  word-spacing: 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 5px black;
+          box-shadow: 0px 0px 5px black;
+  border: 1px solid black;
+  text-align: center;
+  margin-top: .5em;
+  margin-left: 2em;
+  margin-right: 2em;
+  font-size: xx-large;
 }
 
 #open_section {
@@ -41,6 +87,9 @@
           justify-content: none;
   -ms-flex-line-pack: none;
       align-content: none;
+  max-height: 100vh;
+  overflow: auto;
+  scrollbar-width: 0;
 }
 
 .prompts_section h3 {
@@ -49,6 +98,9 @@
   font-weight: normal;
   font-style: normal;
   word-spacing: 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 1;
   -webkit-box-shadow: 0px 0px 5px black;
           box-shadow: 0px 0px 5px black;
   border: 1px solid black;
