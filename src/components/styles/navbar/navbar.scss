@@ -1,8 +1,11 @@
 @import "../variables/Variables.scss";
 
 .navbar_container{
-    @include shadow();
+    margin: 0px;
+    // @include shadow();
     @include navbarBackground();
+    // box-shadow: 0px 0px 5px black;
+    filter:drop-shadow(0px 0px 5px black);
     height: 2em;
     display:flex;
     @include borders();

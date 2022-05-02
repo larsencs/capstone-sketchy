@@ -54,7 +54,9 @@ export const Dashboard = ({getLoggedInUser}) =>{
     return(
         <>
             <div className="dashboard_main_container">
-            <section className="prompts_section" id="open_section">
+                {/* <div className="dashboard_titles"><h3>Open Prompts</h3><h3>Recently Finished Prompts</h3><h3>Other Posts</h3></div> */}
+                <div className="dashboard_prompts_container">
+                <section className="prompts_section" id="open_section">
                 <OpenPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
             </section>
             <section className="prompts_section" id="closed_section">
@@ -63,6 +65,7 @@ export const Dashboard = ({getLoggedInUser}) =>{
             <section className="prompts_section" id="other_section">
                 <OtherPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
             </section>
+                </div>
             </div>
         </>
     )

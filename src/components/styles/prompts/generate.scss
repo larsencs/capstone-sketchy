@@ -8,8 +8,21 @@
     width: 100%;
     height: 100vh;
 
-
-    div{
+    .gen_btns_container{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    p{
+        margin-left: 1em;
+        font-size: larger;
+        color: #fff;
+        text-shadow: 0px 0px 1px black,
+            0px 0px 5px black,
+            0px 0px 10px black;
+    }
+    section{
         @include shadow();
         @include flexCenter(column, none);
         justify-content: flex-end;
@@ -28,7 +41,19 @@
         @include shadow();
     }
     fieldset{
+        height: 1em;
         border: none;
+    }
+    .button_on{
+        margin-left: 1em;
+        box-shadow: 0px 0px 5px white,
+        0px 0px 10px white,
+        0px 0px 15px white;
+        transition: all ease-in .4s;
+    }
+    .button_off{
+        margin-left: 1em;
+        transition: all ease-out .4s;
     }
     button{
         
@@ -37,11 +62,71 @@
         color: #fff;
         margin-right: 2em;
     }
+    .madness_btn{
+        display:flex;
+        justify-content: center;
+        margin: 1em 0em;
+    }
     label{
         color: #fff;
+    }
+    select{
+
+    }
+}
+.generate_btn_div{
+    display:flex;
+    flex-direction: column;
+
+    p{
+        width: 10%;
+        // text-align: center;
+        align-self: center;
+        margin: 0px;
+        font-size:x-large;
+        // border: 1px solid black;
     }
 }
 #image_placeholder{
     width: 100%;
     @include waterColor();
+}
+#madness{
+    margin-top: 1em;
+    height: 1.5em;
+    width: 8em;
+    @include scribblesFont();
+    @include caution();
+    font-size: 20pt;
+    border: none;
+    text-shadow: 0px 0px 1px black,0px 0px 5px black,
+        0px 0px 10px black, 0px 0px 15px black;
+    @include shadow();
+    transition: all ease-in-out 1s;
+}
+#madness:hover{
+    margin-top: 1em;
+    height: 1.5em;
+    width: 8em;
+    @include scribblesFont();
+    @include cautionHover();
+    font-size: 20pt;
+    border: none;
+    text-shadow: 0px 0px 5px black,
+        0px 0px 10px black;
+    @include shadow();
+    
+
+}
+#generate{
+    margin-top: 1em;
+    height: 1.5em;
+    width: 8em;
+    @include scribblesFont();
+    @include inked();
+    font-size: 20pt;
+    border: none;
+    text-shadow: 0px 0px 1px black,0px 0px 5px black,
+        0px 0px 10px black, 0px 0px 15px black;
+    @include shadow();
 }

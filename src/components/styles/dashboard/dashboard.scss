@@ -5,6 +5,7 @@
    
     @include backgroundTexture();
     display:flex;
+    flex-direction: column;
     min-height: 100vh;
 
     section{
@@ -14,6 +15,32 @@
         // flex: 1;
     }
 
+}
+.dashboard_prompts_container{
+    display:flex;
+    flex-direction: row;
+}
+.dashboard_titles{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    h3{
+        @include scribblesFont();
+        position: sticky;
+        z-index: 1;
+        // text-shadow: 0px 0px 5px black;
+        // @include navbarBackground();
+        box-shadow: 0px 0px 5px black;
+        border: 1px solid black;
+        text-align: center;
+        margin-top: .5em;
+        margin-left: 2em;
+        margin-right: 2em;
+        font-size: xx-large;
+        // color: white;
+        // text-shadow: 0px 0px 5px black;
+    }
 }
 #open_section{
     width: 30%;
@@ -31,9 +58,14 @@
 //This is targetting the sections that contain the three kinds of cards
 .prompts_section{
     @include flexCenter(column, none);
+    max-height: 100vh;
+    overflow: auto;
+    scrollbar-width: 0;
 
     h3{
         @include scribblesFont();
+        position: sticky;
+        z-index: 1;
         // text-shadow: 0px 0px 5px black;
         // @include navbarBackground();
         box-shadow: 0px 0px 5px black;
@@ -58,7 +90,7 @@
 .open_prompts{
     @include flexCenter(column, center);    
     // border: 1px solid black;
-    @include borders();
+    // @include borders();
     // @include shadow();
     @include cardBackground();
     margin: 5px;
@@ -76,12 +108,13 @@
 .card_container{
     // @include shadow();
     @include textDec();
-    @include borders();
+    // @include borders();
     height: 30vh;
     @include waterColor();
     // border: 1px solid black;
     @include flexCenter(row, none);
     margin: 5px;
+
     button{
         
     }
@@ -129,24 +162,35 @@
     justify-content: flex-end;
     button{
         @include styleButtons();
+        transition: all ease-out .4s;
     }
         #angry_btn{
             @include buttonGlow($angry);
+            transition: all ease-in-out .4s;
         }
         #sad_btn{
             @include buttonGlow($sad);
+            transition: all ease-in-out .4s;
         }
         #anxious_btn{
             @include buttonGlow($anxious);
+            transition: all ease-in-out .4s;
         }
         #calm_btn{
             @include buttonGlow($calm);
+            transition: all ease-in-out .4s;
         }
         #neutral_btn{
             @include buttonGlow($neutral);
+            transition: all ease-in-out .4s;
         }
         #scary_btn{
             @include buttonGlow($scared);
+            transition: all ease-in-out .4s;
+        }
+        #happy_btn{
+            @include buttonGlow($happy);
+            transition: all ease-in-out .4s;
         }
 }
 .other_posts{
@@ -176,6 +220,9 @@
 }
 #scary{
     @include emotions($scared);
+}
+#happy{
+    @include emotions($happy);
 }
 #prompt_text{
     color: white;

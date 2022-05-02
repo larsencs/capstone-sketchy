@@ -1,9 +1,10 @@
 .navbar_container {
-  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
-          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+  margin: 0px;
   background: url(../../../../public/images/wood-texture.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  -webkit-filter: drop-shadow(0px 0px 5px black);
+          filter: drop-shadow(0px 0px 5px black);
   height: 2em;
   display: -webkit-box;
   display: -ms-flexbox;

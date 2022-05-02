@@ -50,6 +50,26 @@ $scared: #b6772e;
     background-size: cover;
     background-repeat: no-repeat;
 }
+@mixin caution{
+    background: url(../../../../public/images/madness.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin inked {
+    background: url(../../../../public/images/inked.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin cautionHover {
+    background: url(../../../../public/images/cautiontapehover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all ease-in-out .7s;
+}
 
 @mixin buttonGlow($color) {
         
