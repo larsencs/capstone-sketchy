@@ -7,7 +7,7 @@ import { getPrompts } from "../modules/PromptManager"
 import "../styles/prompts/generate.css"
 import { Prompts } from "../prompts/Prompts"
 
-export const Generate = () =>{
+export const Generate = ({getLoggedInUser}) =>{
 
     const [prompt, updatePrompt] = useState([])
     const [emoPrompt, updateEmoPrompt] = useState([])
@@ -199,64 +199,75 @@ export const Generate = () =>{
 
     }
 
+    const nav = () =>{
+      navigate("/prompt", { state:{prompt: generated?.prompt}})
+    }
+
     const handleClick = () =>{
         //Navigates to prompt and passes an object named state as a prop, so that prompt can utilize the results of generate
 
 
         sortPosts();
+        updateShow(true)
+        // setTimeout(nav, 500)
         // <Prompts prompt={prompt}/>
-        navigate("/prompt", { state:{prompt: generated}})
+        
 
     }
 
+    const componentArr = [
+      <section className="gen_container">
+          
+      <section>
+      {/* <img src="https://picsum.photos/300/400"/> */}
+      {/* <div id="image_placeholder"></div> */}
+      
+      <div className="gen_btns_container">
+      <div>
+          <div><p>How are you feeling?</p></div>
+      <button onClick={controlBtn} id="happy" className={ happy ? "button_on" : "button_off"} value={happy}>Happy</button>
+      <button onClick={controlBtn} id="calm" className={ calm ? "button_on" : "button_off"} value={calm}>Calm</button>
+      <button onClick={controlBtn} id="angry" className={ angry ? "button_on" : "button_off"} value={angry}>Angry</button>
+      <button onClick={controlBtn} id="sad" className={ sad ? "button_on" : "button_off"} value={sad}>Sad</button>
+      <button onClick={controlBtn} id="neutral" className={ neutral ? "button_on" : "button_off"} value={neutral}>Neutral</button>
+      <button onClick={controlBtn} id="scared" className={ scared ? "button_on" : "button_off"} value={scared}>Scared</button>
+      <button onClick={controlBtn} id="anxious" className={ anxious ? "button_on" : "button_off"} value={anxious}>Anxious</button>
+      </div>
+      <div>
+        <div><p>What medium do you enjoy?</p></div>
+        <button onClick={controlBtn} id="pencil" className={ pencil ? "button_on" : "button_off"} value={pencil}>Pencil</button>
+        <button onClick={controlBtn} id="ink" className={ ink ? "button_on" : "button_off"} value={ink}>Ink</button>
+        <button onClick={controlBtn} id="paint" className={ paint ? "button_on" : "button_off"} value={paint}>Paint</button>
+      </div>
+      <div>
+        <div><p>What types of things do you like to create?</p></div>
+        <button onClick={controlBtn} id="people" className={ people ? "button_on" : "button_off"} value={people}>People</button>
+        <button onClick={controlBtn} id="places" className={ places ? "button_on" : "button_off"} value={places}>Places</button>
+        <button onClick={controlBtn} id="things" className={ things ? "button_on" : "button_off"} value={things}>Things</button>
+      </div>
+      <div className="madness_btn">
+        <button id="madness" type="button" >MADNESS</button>
+        <button id="generate" type="button" onClick={handleClick}>Generate</button>
+        </div>
+      </div>
+        <form>
+        
+          <fieldset>
+          </fieldset>
+          
+          
+        </form>
+        
+      </section>
+      
+      
+    </section>,
+    <Prompts prompt={generated} getLoggedInUser={getLoggedInUser} show={show} updateShow={updateShow}/>
+    ]
+
     return (
       <>
-        <section className="gen_container">
-          
-          <section>
-          {/* <img src="https://picsum.photos/300/400"/> */}
-          {/* <div id="image_placeholder"></div> */}
-          
-          <div className="gen_btns_container">
-          <div>
-              <div><p>How are you feeling?</p></div>
-          <button onClick={controlBtn} id="happy" className={ happy ? "button_on" : "button_off"} value={happy}>Happy</button>
-          <button onClick={controlBtn} id="calm" className={ calm ? "button_on" : "button_off"} value={calm}>Calm</button>
-          <button onClick={controlBtn} id="angry" className={ angry ? "button_on" : "button_off"} value={angry}>Angry</button>
-          <button onClick={controlBtn} id="sad" className={ sad ? "button_on" : "button_off"} value={sad}>Sad</button>
-          <button onClick={controlBtn} id="neutral" className={ neutral ? "button_on" : "button_off"} value={neutral}>Neutral</button>
-          <button onClick={controlBtn} id="scared" className={ scared ? "button_on" : "button_off"} value={scared}>Scared</button>
-          <button onClick={controlBtn} id="anxious" className={ anxious ? "button_on" : "button_off"} value={anxious}>Anxious</button>
-          </div>
-          <div>
-            <div><p>What medium do you enjoy?</p></div>
-            <button onClick={controlBtn} id="pencil" className={ pencil ? "button_on" : "button_off"} value={pencil}>Pencil</button>
-            <button onClick={controlBtn} id="ink" className={ ink ? "button_on" : "button_off"} value={ink}>Ink</button>
-            <button onClick={controlBtn} id="paint" className={ paint ? "button_on" : "button_off"} value={paint}>Paint</button>
-          </div>
-          <div>
-            <div><p>What types of things do you like to create?</p></div>
-            <button onClick={controlBtn} id="people" className={ people ? "button_on" : "button_off"} value={people}>People</button>
-            <button onClick={controlBtn} id="places" className={ places ? "button_on" : "button_off"} value={places}>Places</button>
-            <button onClick={controlBtn} id="things" className={ things ? "button_on" : "button_off"} value={things}>Things</button>
-          </div>
-          <div className="madness_btn">
-            <button id="madness" type="button" >MADNESS</button>
-            <button id="generate" type="button" onClick={handleClick}>Generate</button>
-            </div>
-          </div>
-            <form>
-            
-              <fieldset>
-              </fieldset>
-              
-              
-            </form>
-            
-          </section>
-          
-          
-        </section>
+          {show? componentArr[1] : componentArr[0]}
       </>
     );
 }

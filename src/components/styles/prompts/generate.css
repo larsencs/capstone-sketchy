@@ -150,9 +150,10 @@
   font-weight: normal;
   font-style: normal;
   word-spacing: 15px;
-  background: url(../../../../public/images/cautiontape.png);
+  background: url(../../../../public/images/madness.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   font-size: 20pt;
   border: none;
   text-shadow: 0px 0px 5px black, 0px 0px 10px black;
@@ -174,6 +175,7 @@
   background: url(../../../../public/images/cautiontapehover.png);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   -webkit-transition: all ease-in-out .7s;
   transition: all ease-in-out .7s;
   font-size: 20pt;

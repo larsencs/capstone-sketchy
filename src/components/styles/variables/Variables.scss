@@ -51,9 +51,10 @@ $scared: #b6772e;
     background-repeat: no-repeat;
 }
 @mixin caution{
-    background: url(../../../../public/images/cautiontape.png);
+    background: url(../../../../public/images/madness.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 @mixin inked {
@@ -66,6 +67,7 @@ $scared: #b6772e;
     background: url(../../../../public/images/cautiontapehover.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     transition: all ease-in-out .7s;
 }
 

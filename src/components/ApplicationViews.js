@@ -23,7 +23,7 @@ export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,
             <Routes>
                 <Route path="/" element={<PrivateOutlet/>}>
                     <Route path="/" element={<Dashboard getLoggedInUser={getLoggedInUser}/>}/>
-                    <Route path="/generate" element={<Generate/>}/>
+                    <Route path="/generate" element={<Generate getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/prompt" element={<Prompts getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/complete_prompt" element={<FinishPost getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/:postId/update_post/" element={<UpdatePost getLoggedInUser={getLoggedInUser}/>}/>
