@@ -1,16 +1,16 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { MadnessPrompt } from "./OpenMadness";
+import { MundanePrompt } from "./OpenMundane";
 
-export const OpenPost = ({post}) =>{
+export const OpenPost = ({post, madness}) =>{
 
   const navigate = useNavigate()
 
     return (
       <>
-        <div className="open_prompts" id={post.emotion.emotion} onClick={() => navigate(`/${post.id}/complete_prompt`)}>
-          {/* <div><p>x</p></div> */}
-          <h4>{post.prompt.prompt}</h4>
-        </div>
+        {post ? <MundanePrompt post={post}/> : <MadnessPrompt madness={madness}/>}
+
       </>
     );
 }

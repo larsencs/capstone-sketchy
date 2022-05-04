@@ -12,7 +12,7 @@ export const AllPost = ({post}) =>{
                 <p>{post.description}</p>
             </div>
             <div>
-                <p>{post.prompt.prompt}</p>
+                <p>{post.prompt?.prompt}</p>
             </div>
         </div>
     )

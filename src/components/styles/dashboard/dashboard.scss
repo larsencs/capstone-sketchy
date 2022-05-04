@@ -192,6 +192,10 @@
             @include buttonGlow($happy);
             transition: all ease-in-out .4s;
         }
+        #MADNESS{
+            @include button-change-color();
+            transition: all ease-in-out .4s;
+        }
 }
 .other_posts{
     @include textDec();
@@ -223,6 +227,9 @@
 }
 #happy{
     @include emotions($happy);
+}
+#MADNESS{
+    @include angryAnimate();
 }
 #prompt_text{
     color: white;

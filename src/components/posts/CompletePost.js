@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from "react"
-import { getPostByUserId, completePost, getPostById } from "../modules/PostManager"
+import { getPostByUserId, completePost, getPostById, getMadnessById } from "../modules/PostManager"
 import { getPromptById } from "../modules/PromptManager"
 import { useNavigate, useParams } from "react-router-dom"
-import { uploadImage } from "../api/cloudinary"
-import { Settings } from "../../Settings.js"
 import "../styles/forms/Complete.css"
+import { uploadCloud } from "../api/cloudinary"
+import { Settings } from "../../Settings"
+import { uploadImage } from "../api/cloudinary"
+import { CompleteMadness } from "./CompleteMadness"
+import { CompleteMundane } from "./CompleteMundane"
 
 
 
@@ -17,77 +20,25 @@ export const CompletePost = ({getLoggedInUser}) =>{
 
     const userId = getLoggedInUser()
     //Stores a file upload when actually in use. Feature still in development.
-    const [file, updateFile] = useState()
+    const [file, updateFile] = useState(null)
     const [post, updatePost] = useState({})
-
-    //feature in development
-    const handleFile = (event) =>{
-        updateFile(event.target.files)
-
-    }
-
-    const controlInput = (event) =>{
-        const selected = {...post}
-       
-        selected[event.target.id] = event.target.value
-
-        updatePost(selected)
-    }
-
-    const savePost = () =>{
-        // const formData = {}
-        // formData.file = file
-        // formData.upload_preset = `${Settings.preset}`
-        // // const formData = new FormData()                
-        // // formData.append("file", file)
-        // // formData.append("upload_preset", `${Settings.preset}`)
-
-        // console.log(formData)
-
-        // uploadImage(formData)
-        //     .then(res => {
-        //         console.log(res)
-        //     })
-
-        const completed = {
-            id: post.id,
-            userId: post.userId,
-            title: post.title,
-            description: post.description,
-            image: post.image,
-            promptId: post.promptId,
-            emotionId: post.emotionId,
-            isComplete: true
-        }
-        
-        completePost(completed).then(navigate("/"))
-        console.log(completed)
-    }
+    const [madness, updateMadness] = useState({})
 
     useEffect(()=>{
         getPostById(postId)
             .then(res => updatePost(res))
     },[])
-    
+
+    useEffect(()=>{
+        getMadnessById(postId)
+            .then(res => updateMadness(res))
+    },[])
+  
 
     return(
         <>
-
-        <div className="form_container">
-            <form className="form_box">
-                <fieldset className="prompts_field">
-                <div className="post_image" style={{ backgroundImage: `url(${post.image})` }}></div>
-                    <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={post.prompt?.prompt} disabled={true}></input>
-                    <input type="text" id="mood" placeholder="mood" defaultValue={post.emotion?.emotion} disabled={true}></input>
-                    <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
-                    {/* <input type="file" id="image" onChange={handleFile}></input> */}
-                    <input type="text" id="image" onChange={controlInput} placeholder="image url"></input>
-                    <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
-                    <button type="button" onClick={savePost}>Submit</button>
-                </fieldset>
-            </form>
-        </div>
-
+            {!post.promptId ? <CompleteMadness getLoggedInUser={getLoggedInUser} madness={madness} updateMadness={updateMadness}/> : <CompleteMundane getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>}
+            {console.log("postId",postId)}
         </>
     )
 }

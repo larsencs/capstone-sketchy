@@ -3,7 +3,7 @@ import { ClosedPost } from "./ClosedPost"
 import { useNavigate } from "react-router-dom"
 
 
-export const ClosedPostList = ({getLoggedInUser, post, comments}) =>{  
+export const ClosedPostList = ({getLoggedInUser, post, comments, madness}) =>{  
 
     const userId = getLoggedInUser()
 
@@ -16,6 +16,13 @@ export const ClosedPostList = ({getLoggedInUser, post, comments}) =>{
             {post.map((mappedPost) =>
               mappedPost.userId === userId && mappedPost.isComplete ? (
                 <ClosedPost key={mappedPost.id} post={mappedPost} comments={comments}/>
+              ) : (
+                ""
+              )
+            )}
+            {madness.map((mappedMadness) =>
+              mappedMadness.userId === userId && mappedMadness.isComplete ? (
+                <ClosedPost key={mappedMadness.id} post={mappedMadness} comments={comments}/>
               ) : (
                 ""
               )

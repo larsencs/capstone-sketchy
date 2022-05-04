@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import { OpenPostList } from "../posts/OpenPostList"
 import { ClosedPostList } from "../posts/ClosedPostList"
 import { OtherPostList } from "../posts/OtherPostList"
-import { getPosts } from "../modules/PostManager"
+import { getPosts, getMadness } from "../modules/PostManager"
 import "../styles/dashboard/dashboard.css"
 import { useNavigate } from "react-router-dom"
 import { getComments } from "../modules/CommentManager"
@@ -13,6 +13,7 @@ export const Dashboard = ({getLoggedInUser}) =>{
     const navigate = useNavigate()
 
     const [post, updatePost] = useState([])
+    const [madness, updateMadness] = useState([])
     const [comment, updateComment] = useState([])
     
     //populating post state
@@ -24,6 +25,10 @@ export const Dashboard = ({getLoggedInUser}) =>{
     useEffect(()=>{
         getComments().then(res => updateComment(res))
     },[]);
+
+    useEffect(()=>{
+        getMadness().then(res => updateMadness(res))
+    },[])
 
 
     //When finally called, it will sort an array of objects into largest >> smallest according to id. In theory.
@@ -57,13 +62,13 @@ export const Dashboard = ({getLoggedInUser}) =>{
                 {/* <div className="dashboard_titles"><h3>Open Prompts</h3><h3>Recently Finished Prompts</h3><h3>Other Posts</h3></div> */}
                 <div className="dashboard_prompts_container">
                 <section className="prompts_section" id="open_section">
-                <OpenPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
+                <OpenPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} madness={madness}/>
             </section>
             <section className="prompts_section" id="closed_section">
-                <ClosedPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} comments={comment}/>
+                <ClosedPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} comments={comment} madness={madness}/>
             </section>
             <section className="prompts_section" id="other_section">
-                <OtherPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost}/>
+                <OtherPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} madness={madness}/>
             </section>
                 </div>
             </div>

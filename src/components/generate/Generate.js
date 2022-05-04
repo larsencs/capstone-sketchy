@@ -12,8 +12,8 @@ export const Generate = ({getLoggedInUser}) =>{
     const [emoPrompt, updateEmoPrompt] = useState([])
     const [mood, updateMood] = useState([])
     const [sentences, updateSentences] = useState([])
-    const [sortedPrompts, updateSortedPrompts] = useState([])
-    const [generated, updateGenerated] = useState()
+    // const [sortedPrompts, updateSortedPrompts] = useState([])
+    const [generated, updateGenerated] = useState("")
     const [happy, updateHappy] = useState(false)
     const [sad, updateSad] = useState(false)
     const [neutral, updateNeutral] = useState(false)
@@ -139,65 +139,71 @@ export const Generate = ({getLoggedInUser}) =>{
       updateSelection(selections)
     }
 
-    const sortPosts = () =>{
-        let tempArr = []
-        let emoArr = []
-        let emoPromptArr = []
-        let sortedArr = []
-        if(happy === true){
-          tempArr.push("happy")
-        }
-        if(sad === true){
-          tempArr.push("sad")
-        }
-        if(calm === true){
-          tempArr.push("calm")
-        }
-        if(angry === true){
-          tempArr.push("angry")
-        }
-        if(neutral === true){
-          tempArr.push("neutral")
-        }
-        if(scared === true){
-          tempArr.push("scared")
-        }
-        if(anxious === true){
-          tempArr.push("anxious")
-        }
+    const sortData = () =>{
+      let tempArr = []
+      let emoArr = []
+      let emoPromptArr = []
+      let sortedArr = []
+      if(happy === true){
+        tempArr.push("happy")
+      }
+      if(sad === true){
+        tempArr.push("sad")
+      }
+      if(calm === true){
+        tempArr.push("calm")
+      }
+      if(angry === true){
+        tempArr.push("angry")
+      }
+      if(neutral === true){
+        tempArr.push("neutral")
+      }
+      if(scared === true){
+        tempArr.push("scared")
+      }
+      if(anxious === true){
+        tempArr.push("anxious")
+      }
 
-        //this works
-        for(let emo of mood){
-          for(let temp of tempArr){
-            if(emo.emotion === temp){
-              emoArr.push(emo.id)
-            }
+      //this works
+      for(let emo of mood){
+        for(let temp of tempArr){
+          if(emo.emotion === temp){
+            emoArr.push(emo.id)
           }
         }
-        for(let emo of emoArr){
-          for(let emote of emoPrompt){
-            if(emo === emote.emotionId){
-              emoPromptArr.push(emote)
-            }
+      }
+      for(let emo of emoArr){
+        for(let emote of emoPrompt){
+          if(emo === emote.emotionId){
+            emoPromptArr.push(emote)
           }
         }
-        for(let emote of emoPromptArr){
-          for(let thing of prompt){
-            if(emote.promptId === thing.id){
-              sortedArr.push(thing)
-            }
+      }
+      for(let emote of emoPromptArr){
+        for(let thing of prompt){
+          if(emote.promptId === thing.id){
+            sortedArr.push(thing)
           }
         }
+      }
+      return sortedArr
+    }
+
+    const sortPosts = () =>{
+        const sortedArr = sortData()
         let index = Math.floor(Math.random()*sortedArr.length)
         const sorted = sortedArr[index]
         const madnessSort = sortedArr
         updateGenerated(sorted)
         console.log("madnessSort", madnessSort)
-        updateSortedPrompts(madnessSort)
+        // updateSortedPrompts(madnessSort)
 
     }
 
     const sortMadness = () =>{
+      const sortedPrompts = sortData()
       console.log("in madness", sortedPrompts)
       const indexOne = Math.floor(Math.random()* sortedPrompts.length)
       const indexTwo = Math.floor(Math.random()* sortedPrompts.length)
@@ -213,7 +219,8 @@ export const Generate = ({getLoggedInUser}) =>{
       }
 
       const finishedSentence = {
-        "prompt" : sentence.fragmentOne + sentence.insertOne + sentence.fragmentTwo + sentence.insertTwo
+        "prompt" : sentence.fragmentOne + sentence.insertOne + sentence.fragmentTwo + sentence.insertTwo,
+        "emotionId" : 8
       }
       updateGenerated(finishedSentence)
 
@@ -232,7 +239,7 @@ export const Generate = ({getLoggedInUser}) =>{
     }
 
     const handleMadness = () =>{
-      sortPosts();
+      // sortPosts();
       sortMadness()
       updateShow(true)
     }

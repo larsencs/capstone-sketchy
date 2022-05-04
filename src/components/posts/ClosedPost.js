@@ -7,6 +7,18 @@ export const ClosedPost = ({post, comments}) =>{
     const [seeComments, updateSeeComments] = useState(false)
 
     //an array of components that are rendered depending on whether seeComments is true or false
+    const componentSubArr = [
+      <div className="chosen_prompts" id={post.emotion?.emotion}>
+      <p id="prompt_text">Draw:</p>
+      <p> {post.prompt?.prompt}</p>
+    </div>
+    ,
+    <div className="chosen_prompts" id={post.emotionId}>
+    <p id="prompt_text">Draw:</p>
+    <p> {post.promptId}</p>
+  </div>
+    ]
+
     const componentArr = [
       <>
       <div className="card_container">
@@ -19,10 +31,7 @@ export const ClosedPost = ({post, comments}) =>{
             <h4>{post.title}</h4>
             <p>{post.description}</p>
           </div>
-          <div className="chosen_prompts" id={post.emotion.emotion}>
-            <p id="prompt_text">Draw:</p>
-            <p> {post.prompt.prompt}</p>
-          </div>
+          {isNaN(post.promptId) ? componentSubArr[1] : componentSubArr[0]}
         </div>
       </div>
       <div className="closed_prompt_btns">
@@ -52,6 +61,7 @@ export const ClosedPost = ({post, comments}) =>{
     </div>
   </>
     ]
+
 
     return (
       <>
