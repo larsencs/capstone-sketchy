@@ -1,5 +1,6 @@
-export const OtherPost = ({post}) =>{
+import React from "react";
 
+export const OtherMundane = ({post}) =>{
 
     return(
         <div className="other_posts" style={{backgroundImage: `linear-gradient(

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { getPostByUserId } from "../modules/PostManager";
-import { AllPostList } from "../posts/AllPostList";
+import { AllPostList } from "../posts/userpost/AllPostList";
 
 export const PostDashboard = ({getLoggedInUser}) =>{
 

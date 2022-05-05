@@ -8,7 +8,7 @@ const dataURL = `https://api.cloudinary.com/v1_1/${Settings.cloudName}/image/`
 
 export const uploadImage = (data) =>{
     console.log("fetch", data)
-    return fetch(`${dataURL}upload/Sketchy/`,{
+    return fetch(`${dataURL}upload/`,{
         method: "POST",
         body: data
 

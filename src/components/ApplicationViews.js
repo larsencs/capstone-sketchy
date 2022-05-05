@@ -9,7 +9,7 @@ import { FinishPost } from "./posts/FinishPost";
 import { UpdatePost } from "./posts/UpdatePost";
 import { PostDashboard } from "./dashboard/PostDashboard";
 import { OtherPostDashboard } from "./dashboard/OtherPostDashboard";
-import { CompletePost } from "./posts/CompletePost";
+import { CompletePost } from "./posts/completed/CompletePost";
 
 export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,}) => {
     

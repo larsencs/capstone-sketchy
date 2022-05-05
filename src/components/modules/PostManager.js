@@ -26,6 +26,8 @@ export const saveMadness = (postObj) =>{
         body: JSON.stringify(postObj)
     }).then(res => res.json())
 }
+
+
 export const getPostByUserId = (userId) =>{
     return fetch(`${dataURL}/posts?userId=${userId}&_expand=prompt&_expand=emotion`)
         .then(res => res.json())

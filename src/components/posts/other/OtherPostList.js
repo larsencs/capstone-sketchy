@@ -3,7 +3,7 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 
 
-export const OtherPostList = ({getLoggedInUser, post}) =>{
+export const OtherPostList = ({getLoggedInUser, post, madness}) =>{
     
     const userId = getLoggedInUser()
     const navigate = useNavigate()
@@ -16,6 +16,13 @@ export const OtherPostList = ({getLoggedInUser, post}) =>{
           {post.map((mappedPost) =>
             mappedPost.userId !== userId && mappedPost.isComplete ? (
               <OtherPost key={mappedPost.id} post={mappedPost} />
+            ) : (
+              ""
+            )
+          )}
+                    {madness.map((mappedMadness) =>
+            mappedMadness.userId !== userId && mappedMadness.isComplete ? (
+              <OtherPost key={mappedMadness.id} madness={mappedMadness} />
             ) : (
               ""
             )

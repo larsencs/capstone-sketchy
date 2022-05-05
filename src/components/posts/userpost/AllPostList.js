@@ -1,5 +1,5 @@
 import { AllPost } from "./AllPost"
-import "../styles/posts/post.css"
+import "../../styles/posts/post.css"
 
 export const AllPostList = ({post, getLoggedInUser}) =>{
 

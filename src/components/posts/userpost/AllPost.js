@@ -1,4 +1,4 @@
-import "../styles/posts/post.css"
+import "../../styles/posts/post.css"
 export const AllPost = ({post}) =>{
 
     return (

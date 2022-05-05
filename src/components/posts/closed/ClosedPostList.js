@@ -22,7 +22,7 @@ export const ClosedPostList = ({getLoggedInUser, post, comments, madness}) =>{
             )}
             {madness.map((mappedMadness) =>
               mappedMadness.userId === userId && mappedMadness.isComplete ? (
-                <ClosedPost key={mappedMadness.id} post={mappedMadness} comments={comments}/>
+                <ClosedPost key={mappedMadness.id} madness={mappedMadness} comments={comments}/>
               ) : (
                 ""
               )
