@@ -98,21 +98,37 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-height: 100vh;
+  width: 100%;
   background: url(../../../../public/images/plain-paper.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.all_post_container .post_div {
+.all_post_container .yet_another_post_container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 30vw;
+          flex: 1 30vw;
+  margin: 1em;
+}
+
+.all_post_container .single_post_container {
+  border: 1px solid black;
+  min-height: 50%;
+}
+
+.all_post_container .single_post_container .post_div {
   color: #fff;
   text-shadow: 0px 0px 5px black;
   margin: .5em;
   border: 1px solid black;
-  width: 20%;
-  height: 40%;
+  height: 20em;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
