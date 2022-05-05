@@ -6,7 +6,7 @@ import { Dashboard } from "./dashboard/Dashboard";
 import { Generate } from "./generate/Generate";
 import { Prompts } from "./prompts/Prompts";
 import { FinishPost } from "./posts/FinishPost";
-import { UpdatePost } from "./posts/UpdatePost";
+import { UpdatePost } from "./posts/edit/UpdatePost";
 import { PostDashboard } from "./dashboard/PostDashboard";
 import { OtherPostDashboard } from "./dashboard/OtherPostDashboard";
 import { CompletePost } from "./posts/completed/CompletePost";

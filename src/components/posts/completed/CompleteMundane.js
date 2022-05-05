@@ -59,8 +59,8 @@ export const CompleteMundane = ({getLoggedInUser, post, updatePost}) =>{
         <form className="form_box">
             <fieldset className="prompts_field">
             <div className="post_image" style={{ backgroundImage: `url(${post.image})` }}></div>
-                <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={post.promptId} disabled={true}></input>
-                <input type="text" id="mood" placeholder="mood" defaultValue={post.emotionId} disabled={true}></input>
+                <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={post?.prompt?.prompt} disabled={true}></input>
+                <input type="text" id="mood" placeholder="mood" defaultValue={post?.emotion?.emotion} disabled={true}></input>
                 <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
                 {/* <input type="file" id="image" onChange={handleFile}></input> */}
                 <input type="text" id="image" onChange={controlInput} placeholder="image url"></input>

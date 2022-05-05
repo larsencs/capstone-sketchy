@@ -1,16 +1,4 @@
-import React, {useState, useEffect} from "react"
-import { useNavigate } from "react-router-dom"
-import { completePost, deletePost, getPostById } from "../modules/PostManager"
-import { useParams } from "react-router-dom"
-
-
-export const UpdatePost = () =>{
-
-    const [post, updatePost] = useState({})
-
-    const {postId} = useParams()
-
-    const navigate = useNavigate()
+export const UpdateMundane = ({post, handleDeletePost, handleEditPost, updatePost}) =>{
 
     const controlInput = (event) =>{
         let target = {...post}
@@ -23,22 +11,8 @@ export const UpdatePost = () =>{
 
     }
 
-    const handleDeletePost = (event) =>{
-        deletePost(postId)
-            .then(navigate("/"))
-    }
-
-    const handleEditPost = () =>{
-        completePost(post).then(navigate("/"))
-    }
-
-    useEffect(()=>{
-        getPostById(postId)
-            .then(res => updatePost(res))
-    },[])
-
-    return (
-    <>
+    return(
+        <>
         <img src="https://picsum.photos/300/400"></img>
         <form>
             <fieldset>
@@ -52,6 +26,6 @@ export const UpdatePost = () =>{
                 <button type="button" onClick={handleEditPost}>Submit</button>
             </fieldset>
         </form>
-    </>)
-
+    </>
+    )
 }

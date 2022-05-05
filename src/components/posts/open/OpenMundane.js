@@ -10,7 +10,7 @@ export const MundanePrompt = ({post}) =>{
         <>
                 <div
       className="open_prompts"
-      id={post?.emotionId}
+      id={post?.emotion?.emotion}
       onClick={() => navigate(`/${post.id}/complete_prompt`)}
     >
       {/* <div><p>x</p></div> */}

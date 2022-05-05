@@ -9,7 +9,7 @@ export const MadnessPrompt = ({madness}) =>{
       <>
             <div
         className="open_prompts"
-        id={madness?.emotionId}
+        id={madness?.emotion?.emotion}
         onClick={() => navigate(`/${madness.id}/complete_prompt`)}
       >
         {/* <div><p>x</p></div> */}

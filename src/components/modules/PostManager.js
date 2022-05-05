@@ -33,6 +33,11 @@ export const getPostByUserId = (userId) =>{
         .then(res => res.json())
 }
 
+export const getMadnessByUserId = (userId) =>{
+    return fetch(`${dataURL}/madness?userId=${userId}&_expand=emotion`)
+        .then(res => res.json())
+}
+
 export const completePost = (postObj) =>{
     return fetch(`${dataURL}/posts/${postObj.id}`,{
         method: "PUT",
@@ -54,6 +59,15 @@ export const completeMadness = (postObj) =>{
 }
 export const deletePost = (postID) =>{
     return fetch(`${dataURL}/posts/${postID}`,{
+        method: "DELETE",
+        headers:{
+            "Content-Type" : "application/json"
+        }
+    }).then(res => res.json())
+}
+
+export const deleteMadness = (postID) =>{
+    return fetch(`${dataURL}/madness/${postID}`,{
         method: "DELETE",
         headers:{
             "Content-Type" : "application/json"

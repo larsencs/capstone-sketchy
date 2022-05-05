@@ -17,7 +17,7 @@ export const AllOtherPost = ({post, getLoggedInUser, madness}) =>{
 
     })
     const [madnessComment, updateMadnessComment] = useState({
-        madnessId: madness?.id,
+        postId: madness?.id,
         comment: "",
         userId: userId
 
@@ -29,7 +29,7 @@ export const AllOtherPost = ({post, getLoggedInUser, madness}) =>{
     }
 
     const saveMadnessComment = () =>{
-        postMadnessComment()
+        postMadnessComment(madnessComment)
             .then(updateLeaveComment(false))
     }
    
