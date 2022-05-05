@@ -9,23 +9,31 @@
     @include backgroundTexture();
 
     .yet_another_post_container{
-        flex: 1 30vw;
+        flex: 1 20vw;
         margin: 1em;
     }
 
     .single_post_container{
         border: 1px solid black;
+        font-size: 12pt;
+        @include textDec();
         min-height: 50%;
+        @include waterColor();
+        border-radius: 10px;
+        
 
         .post_div{
             @include textDec();
-            margin: .5em;
-            border: 1px solid black;
+            border-radius: 10px 10px 0px 0px;
+            border-bottom: 2px solid black;
+            // margin: .5em;
+            // border: 1px solid black;
             // width: 100%;
             height: 20em;
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
+            
         }
     }
 

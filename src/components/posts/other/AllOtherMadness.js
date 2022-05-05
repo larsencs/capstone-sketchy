@@ -48,7 +48,7 @@ export const AllOtherMadness = ({madness, comment, updateComment, updateLeaveCom
     rgba(0, 0, 0, 0.3)
   ),url(${madness?.image})`}}></div>
     <div>
-        <h4>{madness?.title}</h4>
+        <h4>{madness?.title}</h4>/*8
         <p>{madness?.description}</p>
     </div>
     <div>
