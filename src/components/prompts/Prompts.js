@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import { useLocation } from "react-router-dom"
-import { savePost } from "../modules/PostManager"
+import { savePost, saveMadness } from "../modules/PostManager"
 import { useNavigate } from "react-router-dom"
 import "../styles/prompts/prompt.css"
 
@@ -34,21 +34,37 @@ export const Prompts = ({getLoggedInUser, prompt, show, setUpdateShow, emo}) =>{
       
       let emotionId = []
       let index = Math.floor(Math.random()* emotionId.length)
+      const post = {}
 
-      for(let emote of emo){
-        if(emote.promptId === prompt.id){
-          emotionId.push(emote.emotionId)
-        }
-      }
-        const post = {
-            userId: userId,
-            promptId: prompt?.id,
-            emotionId: emotionId[index],
-            isComplete: false
+      if(isNaN(prompt?.id)){
 
+          post.userId = userId
+          post.prompt = prompt.prompt
+          // post.madnessId = Math.floor(Math.random() * prompt.prompt.length) * 999999999999
+          post.emotionId = 8
+          post.isComplete = false
+
+          saveMadness(post).then( navigate("/"))
+      }else{
+        for(let emote of emo){
+          if(emote.promptId === prompt.id){
+            emotionId.push(emote.emotionId)
+
+            post.userId = userId
+            post.promptId = prompt?.id
+            post.emotionId = emotionId[0]
+            post.isComplete = false
+            
+          }
         }
-        
         savePost(post).then( navigate("/"))
+  
+          
+          
+          
+      }
+
+
     }
 
 

@@ -19,7 +19,7 @@ export const NavBar = ({clearUser, getLoggedInUser, isAuthenticated}) =>{
             <div><Link to="/generate" className="link">Generate</Link></div>
           </span>
           <span className="finish_link">
-            <Link to="/complete_prompt" className="link">Finish Prompt</Link>
+            {/* <Link to="/complete_prompt" className="link">Finish Prompt</Link> */}
           </span>
         </nav>
       </>,

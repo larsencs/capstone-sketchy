@@ -33,6 +33,7 @@ $anxious: #42a819;
 $happy: #d4d639;
 $calm: #2f8fac;
 $scared: #b6772e;
+$MADNESS: rgb(225, 0, 255);
 
 
 
@@ -145,3 +146,25 @@ $scared: #b6772e;
         background-color: transparent;
 }
 
+@mixin angryAnimate {
+    color: #fff;
+    animation: change-color 4s linear 0s infinite normal;
+}
+
+@keyframes change-color {
+    0%{text-shadow: 0px 0px 5px black, 0px 0px 10px #e74040, 0px 0px 15px #e74040 ;}
+    20%{ text-shadow: 0px 0px 5px black, 0px 0px 10px #b6772e, 0px 0px 15px #b6772e ;}
+    40%{ text-shadow: 0px 0px 5px black, 0px 0px 10px #d4d639, 0px 0px 15px #d4d639 ;}
+    60%{ text-shadow: 0px 0px 5px black, 0px 0px 10px #42a819, 0px 0px 15px #42a819 ;}
+    80%{ text-shadow: 0px 0px 5px black, 0px 0px 10px #2f8fac, 0px 0px 15px #2f8fac ;}
+    100%{ text-shadow: 0px 0px 5px black, 0px 0px 10px #e74040, 0px 0px 15px #e74040 ;}
+
+}
+@keyframes button-change-color{
+    0%{box-shadow: 0px 0px 5px black, 0px 0px 10px #e74040, 0px 0px 15px #e74040 ;}
+    20%{ box-shadow: 0px 0px 5px black, 0px 0px 10px #b6772e, 0px 0px 15px #b6772e ;}
+    40%{ box-shadow: 0px 0px 5px black, 0px 0px 10px #d4d639, 0px 0px 15px #d4d639 ;}
+    60%{ box-shadow: 0px 0px 5px black, 0px 0px 10px #42a819, 0px 0px 15px #42a819 ;}
+    80%{ box-shadow: 0px 0px 5px black, 0px 0px 10px #2f8fac, 0px 0px 15px #2f8fac ;}
+    100%{ box-shadow: 0px 0px 5px black, 0px 0px 10px #e74040, 0px 0px 15px #e74040 ;}
+}

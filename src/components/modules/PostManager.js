@@ -3,7 +3,7 @@ const dataURL = "http://localhost:8088"
 
 export const getPosts = () =>{
     return fetch(`${dataURL}/posts?_expand=prompt&_expand=emotion`)
-        .then(res => res.json())
+        .then(res =>  res.json())
 }
 
 export const savePost = (postObj) =>{
@@ -16,8 +16,25 @@ export const savePost = (postObj) =>{
     }).then(res => res.json())
 
 }
+
+export const saveMadness = (postObj) =>{
+    return fetch(`${dataURL}/madness/`,{
+        method: "POST",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(postObj)
+    }).then(res => res.json())
+}
+
+
 export const getPostByUserId = (userId) =>{
     return fetch(`${dataURL}/posts?userId=${userId}&_expand=prompt&_expand=emotion`)
+        .then(res => res.json())
+}
+
+export const getMadnessByUserId = (userId) =>{
+    return fetch(`${dataURL}/madness?userId=${userId}&_expand=emotion`)
         .then(res => res.json())
 }
 
@@ -31,6 +48,15 @@ export const completePost = (postObj) =>{
     }).then( res => res.json())
 }
 
+export const completeMadness = (postObj) =>{
+    return fetch(`${dataURL}/madness/${postObj.id}`,{
+        method: "PUT",
+        headers:{
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(postObj)
+    }).then( res => res.json())
+}
 export const deletePost = (postID) =>{
     return fetch(`${dataURL}/posts/${postID}`,{
         method: "DELETE",
@@ -40,7 +66,26 @@ export const deletePost = (postID) =>{
     }).then(res => res.json())
 }
 
+export const deleteMadness = (postID) =>{
+    return fetch(`${dataURL}/madness/${postID}`,{
+        method: "DELETE",
+        headers:{
+            "Content-Type" : "application/json"
+        }
+    }).then(res => res.json())
+}
+
 export const getPostById = (postId) =>{
     return fetch(`${dataURL}/posts/${postId}?_expand=prompt&_expand=emotion`)
+        .then(res => res.json())
+}
+
+export const getMadnessById = (madnessId) =>{
+    return fetch(`${dataURL}/madness/${madnessId}?_expand=emotion`)
+        .then(res => res.json())
+}
+
+export const getMadness = () =>{
+    return fetch(`${dataURL}/madness?_expand=emotion`)
         .then(res => res.json())
 }
