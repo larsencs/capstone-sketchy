@@ -120,7 +120,7 @@
   height: 100vh;
 }
 
-.open_prompt_card div {
+.open_prompt_card #prompt_div {
   -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
           box-shadow: 0px 0px 10px black, 0px 0px 15px black;
   display: -webkit-box;
@@ -144,7 +144,7 @@
   background-repeat: no-repeat;
 }
 
-.open_prompt_card div h1 {
+.open_prompt_card #prompt_div h1 {
   font-family: 'Scribbles';
   src: url("../fonts/Scribbles-Regular.woff");
   font-weight: normal;
@@ -154,5 +154,20 @@
   color: #fff;
   text-shadow: 0px 0px 5px black, 0px 0px 10px black;
   text-align: center;
+}
+
+.open_prompt_card #button_div {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.open_prompt_card #button_div button {
+  margin-top: 1em;
+  cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  border: 1px solid black;
+  background-color: transparent;
 }
 /*# sourceMappingURL=prompt.css.map */

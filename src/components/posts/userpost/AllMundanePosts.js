@@ -8,11 +8,11 @@ export const AllMundanePosts = ({post}) =>{
         rgba(0, 0, 0, 0.3),
         rgba(0, 0, 0, 0.3)
       ),url(${post?.image})`}}></div>
-        <div>
+        <div className="post_text_container">
             <h4>{post?.title}</h4>
             <p>{post?.description}</p>
         </div>
-        <div>
+        <div className="post_prompt_container" id={post.emotion.emotion}>
             <p>{post?.prompt?.prompt}</p>
         </div>
         </div>

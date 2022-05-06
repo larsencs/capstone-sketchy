@@ -65,6 +65,7 @@
     max-height: 100vh;
     overflow: hidden;
     overflow-y: scroll;
+    
 
 
 
@@ -96,7 +97,7 @@
 //this is targetting the individual open prompt cards
 .open_prompts{
     @include flexCenter(column, center);    
-    // border: 1px solid black;
+    border: 2px solid black;
     // @include borders();
     // @include shadow();
     @include cardBackground();
@@ -114,6 +115,7 @@
 //This is targetting the invidual finished post cards
 .card_container{
     // @include shadow();
+    border: 2px solid black;
     @include textDec();
     // @include borders();
     height: 30vh;
@@ -128,6 +130,7 @@
 
     div{
         width: 50%;
+
         
         // border: 1px solid black;
     }
@@ -207,7 +210,7 @@
 .other_posts{
     @include textDec();
     margin: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     // @include shadow();
     min-height: 25vh;
     background-size: cover;

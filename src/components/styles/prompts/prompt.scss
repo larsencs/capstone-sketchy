@@ -10,7 +10,7 @@
 
 
 
-    div{
+    #prompt_div{
         @include shadow();
         @include flexCenter(column, center);
         margin-top: 5em;
@@ -30,5 +30,13 @@
             
         }
 
+    }
+    #button_div{
+        button{
+            margin-top: 1em;
+            @include styleButtons();
+        }
+        align-self: center;
+        
     }
 }

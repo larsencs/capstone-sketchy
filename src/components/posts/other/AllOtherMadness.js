@@ -23,17 +23,21 @@ export const AllOtherMadness = ({madness, comment, updateComment, updateLeaveCom
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
           ),url(${madness?.image})`}}></div>
-            <div>
+            {/* <div>
                 <h4>{madness?.title}</h4>
                 <p>{madness?.description}</p>
             </div>
             <div>
                 <p>{madness?.prompt}</p>
+            </div> */}
+            <div className="comment_input">
+            <textarea type="text" id="comment" onChange={handleChange} placeholder="leave a comment" rows="5" columns="20"></textarea>
             </div>
-            <input type="text" id="comment" onChange={handleChange} placeholder="leave a comment"></input>
-<div>
-    <button onClick={()=> updateLeaveComment(false)}>Cancel</button>
+<div className="comment_buttons">
+            <div>
+            <button onClick={()=> updateLeaveComment(false)}>Cancel</button>
     <button type="button" onClick={saveComment}>Submit</button>
+            </div>
 </div>
             </div>
         </div>
@@ -56,9 +60,13 @@ export const AllOtherMadness = ({madness, comment, updateComment, updateLeaveCom
     </div>
     <div>
 <p>{madness?.prompt?.prompt}</p>
-<button onClick={()=> updateLeaveComment(true)}>Add a comment</button>
-</div>
+<div className="comment_btn_div">
+    <button onClick={()=> updateLeaveComment(true)}>Add a comment</button>
     </div>
+</div>
+
+    </div>
+
 </div>]
     return(
         <>

@@ -1,33 +1,126 @@
 @import "../variables/Variables.scss";
 
-.form_container{
-    @include backgroundTexture();
+.complete_container{
     height: 100vh;
+    @include backgroundTexture();
     display:flex;
     justify-content: center;
+}
 
-    .form_box{
+.complete_card_container{
+        position:fixed;
         margin-top: 10vh;
-        @include flexCenter(column, none);
-        width: 30%;
-        fieldset{
-            @include flexCenter(column, none);
-            width: 100%;
+        // @include shadow();
+        border: 2px solid black;
+        @include textDec();
+        // @include borders();
+        // height: 50%;
+        @include waterColor();
+        // border: 1px solid black;
+        @include flexCenter(row, none);
+        width: 50%;
 
-
+        .complete_buttons{
+            display:flex;
+            flex-direction: row;
         }
-    }
+
+        input{
+            background-color: transparent;
+            @include textDec();
+            font-size:small;
+        }
+        textarea{
+            font-size: small;
+            background-color: transparent;
+            @include textDec();
+        }
+
+        .complete_prompts_field{
+            display:flex;
+            width: 100%;
+            // flex-direction: column;
+            justify-content: center;
+            border: none;
+
+            div{
+                display:flex;
+                flex-direction: column;
+                width: 100%;
+                margin: 1em;
+
+                div{
+                    align-self: flex-end;
+                }
+            }
+        }
+    
+        button{
+            
+        }
+    
+        div{
+            width: 50%;
+    
+            
+            // border: 1px solid black;
+        }
+        .complete_chosen_prompts{
+            display:flex;
+            width: 100%;
+            margin: 0px;
+    
+            p{
+                font-size: small;
+            }
+        }
+}
+.complete_finished_picture{
+        background-color: black;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
 
 }
-.post_image{
-    width: 100%;
-    height: 30vh;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 
-    img{
-        width: 100%;
-    }
-    // background-color: aqua;
-}
+
+
+// .form_container{
+//     @include backgroundTexture();
+//     height: 100vh;
+//     display:flex;
+//     justify-content: center;
+
+//     .form_box{
+//         margin-top: 10vh;
+//         @include flexCenter(column, none);
+//         width: 20vw;
+//         fieldset{
+//             @include flexCenter(column, none);
+//             width: 100%;
+            
+//             #description{
+//                 display: inline-block;
+//                 background: #fff;
+//                 color: black;
+//                 border: solid 1px #000;
+//             }
+
+//         }
+//     }
+
+// }
+// .post_image{
+//     width: 100%;
+//     height: 30vh;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//     background-position: center;
+
+//     img{
+//         width: 100%;
+//     }
+//     // background-color: aqua;
+// }
+
+

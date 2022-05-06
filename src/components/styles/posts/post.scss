@@ -4,6 +4,7 @@
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
+    // justify-content: space-evenly;
     min-height: 100vh;
     width: 100%;
     @include backgroundTexture();
@@ -11,20 +12,57 @@
     .yet_another_post_container{
         flex: 1 20vw;
         margin: 1em;
+        .comment_btn_div{
+            display:flex;
+            justify-content: center;
+            margin: 1em;
+        }
     }
+
 
     .single_post_container{
         border: 1px solid black;
         font-size: 12pt;
         @include textDec();
-        min-height: 50%;
         @include waterColor();
-        border-radius: 10px;
-        
+        @include shadow();
+
+        .post_text_container{
+            margin: 1em;
+
+            h4{
+                margin: 0px;
+                border-bottom: 2px solid black;
+            }
+        }
+        .post_prompt_container{
+            margin: 1em;
+        }
+        .comment_input{
+            display:flex;
+            justify-content: center;
+            margin-top: 1em;
+            width: 100%;
+            textarea{
+                width: 75%;
+            }
+        }
+        .comment_buttons{
+            display:flex;
+            width: 100%;
+            div{
+                display:flex;
+                justify-content: flex-end;
+                width: 89%;
+            }
+            button{
+                margin: .5em;
+            }
+        }
 
         .post_div{
             @include textDec();
-            border-radius: 10px 10px 0px 0px;
+            
             border-bottom: 2px solid black;
             // margin: .5em;
             // border: 1px solid black;

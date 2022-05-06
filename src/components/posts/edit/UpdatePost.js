@@ -4,6 +4,7 @@ import { completePost, deletePost, getPostById, deleteMadness, getMadnessById, c
 import { useParams } from "react-router-dom"
 import { UpdateMadness } from "./UpdateMadness"
 import { UpdateMundane } from "./UpdateMundane"
+import "../../styles/forms/Complete.css"
 
 
 export const UpdatePost = () =>{

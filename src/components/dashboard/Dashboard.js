@@ -15,6 +15,7 @@ export const Dashboard = ({getLoggedInUser}) =>{
     const [post, updatePost] = useState([])
     const [madness, updateMadness] = useState([])
     const [comment, updateComment] = useState([])
+    const [show, updateShow] = useState([])
     
     //populating post state
     useEffect(()=>{
@@ -65,7 +66,7 @@ export const Dashboard = ({getLoggedInUser}) =>{
                 <OpenPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} madness={madness}/>
             </section>
             <section className="prompts_section" id="closed_section">
-                <ClosedPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} comments={comment} madness={madness}/>
+                <ClosedPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} comments={comment} madness={madness} show={show} updateShow={updateShow}/>
             </section>
             <section className="prompts_section" id="other_section">
                 <OtherPostList getLoggedInUser={getLoggedInUser} post={post} updatePost={updatePost} madness={madness}/>

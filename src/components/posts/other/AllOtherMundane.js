@@ -16,68 +16,58 @@ export const AllOtherMundane = ({post, comment, updateComment, leaveComment, upd
     ]
 
     //An array of React components which are rendered depending on if leaveComment is true or false
-    const componentArr = [
-      <>
-        <div className="yet_another_post_container">
-          <div className="single_post_container">
-            <div
-              className="post_div"
-              style={{
-                backgroundImage: `linear-gradient(
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3)
-      ),url(${post?.image})`,
-              }}
-            ></div>
-            <div>
-              <h4>{post?.title}</h4>
-              <p>{post?.description}</p>
-            </div>
-            <div>
-              <p>{post?.prompt?.prompt}</p>
-            </div>
-            <input
-              type="text"
-              id="comment"
-              onChange={handleChange}
-              placeholder="leave a comment"
-            ></input>
-            <div>
-              <button onClick={() => updateLeaveComment(false)}>Cancel</button>
-              <button type="button" onClick={saveComment}>
-                Submit
-              </button>
-            </div>
-          </div>
-        </div>
-      </>,
+    const componentArr = [<>
       <div className="yet_another_post_container">
-        <div className="single_post_container">
-          <div
-            className="post_div"
-            style={{
-              backgroundImage: `linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3)
-  ),url(${post?.image})`,
-            }}
-          ></div>
-          <div>
-            <h4>{post?.title}</h4>
-            <p>{post?.description}</p>
+          <div className="single_post_container">
+          <div className="post_div" style={{backgroundImage:`linear-gradient(
+          rgba(0, 0, 0, 0.3),
+          rgba(0, 0, 0, 0.3)
+        ),url(${post?.image})`}}></div>
+          {/* <div>
+              <h4>{madness?.title}</h4>
+              <p>{madness?.description}</p>
           </div>
           <div>
-            <p>{post?.prompt?.prompt}</p>
+              <p>{madness?.prompt}</p>
+          </div> */}
+          <div className="comment_input">
+          <textarea type="text" id="comment" onChange={handleChange} placeholder="leave a comment" rows="5" columns="20"></textarea>
           </div>
+<div className="comment_buttons">
           <div>
-            <p>{post?.prompt?.prompt}</p>
-            <button onClick={() => updateLeaveComment(true)}>
-              Add a comment
-            </button>
+          <button onClick={()=> updateLeaveComment(false)}>Cancel</button>
+  <button type="button" onClick={saveComment}>Submit</button>
           </div>
-        </div>
-      </div>,
-    ];
+</div>
+          </div>
+      </div>
+
+
+  </>
+  ,
+  <div className="yet_another_post_container">
+  <div className="single_post_container">
+  <div className="post_div" style={{backgroundImage:`linear-gradient(
+  rgba(0, 0, 0, 0.3),
+  rgba(0, 0, 0, 0.3)
+),url(${post?.image})`}}></div>
+  <div>
+      <h4>{post?.title}</h4>/*8
+      <p>{post?.description}</p>
+  </div>
+  <div>
+      <p>{post?.prompt?.prompt}</p>
+  </div>
+  <div>
+<p>{post?.prompt?.prompt}</p>
+<div className="comment_btn_div">
+  <button onClick={()=> updateLeaveComment(true)}>Add a comment</button>
+  </div>
+</div>
+
+  </div>
+
+</div>]
     return(
         <>
             {leaveComment ? componentArr[0] : componentArr[1]}

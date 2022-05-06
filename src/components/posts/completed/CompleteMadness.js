@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { completePost, getMadnessById, completeMadness } from "../../modules/PostManager"
 // import { Settings } from "../../Settings"
+import "../../styles/forms/Complete.css"
 
 export const CompleteMadness = ({getLoggedInUser, madness, updateMadness}) =>{
 
@@ -61,20 +62,47 @@ export const CompleteMadness = ({getLoggedInUser, madness, updateMadness}) =>{
         // },[])
 
     return (
+        <>
+                    <div className="complete_container">
+        <div className="complete_card_container">
+          <div
+            className="complete_finished_picture"
+            style={{ backgroundImage: `url(${madness?.image})` }}
+          ></div>
+          <div className="complete_closed_prompt">
+          <div className="complete_prompts_field">
+        <div>
+                <input type="text" id="title" placeholder="title" required onChange={controlInput}></input>
+        <input type="text" id="image" onChange={controlInput} required placeholder="image url"></input>
+        <textarea type="text" rows="4" columns="10" id="description" required onChange={controlInput} placeholder="description"></textarea>
 
-        <div className="form_container">
-        <form className="form_box">
-            <fieldset className="prompts_field">
-            <div className="madness_image" style={{ backgroundImage: `url(${madness.image})` }}></div>
-                <input type="text" id="prompt" placeholder="chosen prompt" defaultValue={madness.prompt} disabled={true}></input>
-                <input type="text" id="mood" placeholder="mood" defaultValue={madness.emotion?.emotion} disabled={true}></input>
-                <input type="text" id="title" placeholder="title" onChange={controlInput}></input>
-                {/* <input type="file" id="image" onChange={handleFile}></input> */}
-                <input type="text" id="image" onChange={controlInput} placeholder="image url"></input>
-                <input type="text" id="description" placeholder="description" onChange={controlInput}></input>
-                <button type="button" onClick={saveMadness}>Submit</button>
-            </fieldset>
-        </form>
+        </div>
     </div>
+            <div className="complete_chosen_prompts" id={madness?.emotion?.emotion}>
+        <p id="prompt_text">Draw:</p>
+        <p> {madness?.prompt}</p>
+      </div>
+      <div className="complete_buttons">
+      <button type="button" onClick={saveMadness}>Submit</button>
+      </div>
+          </div>
+        </div>
+        </div>
+        </>
+
     )
 }
+//  <div className="form_container">
+// <form className="form_box">
+//     <fieldset className="prompts_field">
+//     <div className="post_image" style={{ backgroundImage: `url(${madness.image})` }}></div>
+//         <input type="text" id="prompt" placeholder="chosen prompt"defaultValue={madness.prompt} disabled={true}></input>
+//         <input type="text" id="mood" placeholder="mood" defaultValue={madness.emotion?.emotion} disabled={true}></input>
+//         <input type="text" id="title" placeholder="title" required onChange={controlInput}></input>
+//          <input type="file" id="image" onChange={handleFile}></input>
+//         <input type="text" id="image" onChange={controlInput} required placeholder="image url"></input>
+//         <textarea type="text" rows="4" columns="10" id="description" required onChange={controlInput} placeholder="description"></textarea>
+//         <button type="button" onClick={saveMadness}>Submit</button>
+//     </fieldset>
+// </form>
+// </div>

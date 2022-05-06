@@ -118,22 +118,80 @@
   margin: 1em;
 }
 
+.all_post_container .yet_another_post_container .comment_btn_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1em;
+}
+
 .all_post_container .single_post_container {
   border: 1px solid black;
   font-size: 12pt;
   color: #fff;
   text-shadow: 0px 0px 5px black;
-  min-height: 50%;
   background: url(../../../../public/images/watercolor.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+}
+
+.all_post_container .single_post_container .post_text_container {
+  margin: 1em;
+}
+
+.all_post_container .single_post_container .post_text_container h4 {
+  margin: 0px;
+  border-bottom: 2px solid black;
+}
+
+.all_post_container .single_post_container .post_prompt_container {
+  margin: 1em;
+}
+
+.all_post_container .single_post_container .comment_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.all_post_container .single_post_container .comment_input textarea {
+  width: 75%;
+}
+
+.all_post_container .single_post_container .comment_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.all_post_container .single_post_container .comment_buttons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 89%;
+}
+
+.all_post_container .single_post_container .comment_buttons button {
+  margin: .5em;
 }
 
 .all_post_container .single_post_container .post_div {
   color: #fff;
   text-shadow: 0px 0px 5px black;
-  border-radius: 10px 10px 0px 0px;
   border-bottom: 2px solid black;
   height: 20em;
   background-size: contain;
