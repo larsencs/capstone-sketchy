@@ -98,21 +98,102 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-height: 100vh;
+  width: 100%;
   background: url(../../../../public/images/plain-paper.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.all_post_container .post_div {
+.all_post_container .yet_another_post_container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 20vw;
+          flex: 1 20vw;
+  margin: 1em;
+}
+
+.all_post_container .yet_another_post_container .comment_btn_div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1em;
+}
+
+.all_post_container .single_post_container {
+  border: 1px solid black;
+  font-size: 12pt;
   color: #fff;
   text-shadow: 0px 0px 5px black;
+  background: url(../../../../public/images/watercolor.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+          box-shadow: 0px 0px 10px black, 0px 0px 15px black;
+}
+
+.all_post_container .single_post_container .post_text_container {
+  margin: 1em;
+}
+
+.all_post_container .single_post_container .post_text_container h4 {
+  margin: 0px;
+  border-bottom: 2px solid black;
+}
+
+.all_post_container .single_post_container .post_prompt_container {
+  margin: 1em;
+}
+
+.all_post_container .single_post_container .comment_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.all_post_container .single_post_container .comment_input textarea {
+  width: 75%;
+}
+
+.all_post_container .single_post_container .comment_buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.all_post_container .single_post_container .comment_buttons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 89%;
+}
+
+.all_post_container .single_post_container .comment_buttons button {
   margin: .5em;
-  border: 1px solid black;
-  width: 20%;
-  height: 40%;
+}
+
+.all_post_container .single_post_container .post_div {
+  color: #fff;
+  text-shadow: 0px 0px 5px black;
+  border-bottom: 2px solid black;
+  height: 20em;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -27,7 +27,7 @@
 
     h3{
         @include scribblesFont();
-        position: sticky;
+        position: fixed;
         z-index: 1;
         // text-shadow: 0px 0px 5px black;
         // @include navbarBackground();
@@ -55,12 +55,20 @@
 #other_post_nav{
     cursor: pointer;
 }
+::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+}
 //This is targetting the sections that contain the three kinds of cards
 .prompts_section{
     @include flexCenter(column, none);
     max-height: 100vh;
-    overflow: auto;
-    scrollbar-width: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+    
+
+
+
 
     h3{
         @include scribblesFont();
@@ -89,7 +97,7 @@
 //this is targetting the individual open prompt cards
 .open_prompts{
     @include flexCenter(column, center);    
-    // border: 1px solid black;
+    border: 2px solid black;
     // @include borders();
     // @include shadow();
     @include cardBackground();
@@ -107,6 +115,7 @@
 //This is targetting the invidual finished post cards
 .card_container{
     // @include shadow();
+    border: 2px solid black;
     @include textDec();
     // @include borders();
     height: 30vh;
@@ -121,6 +130,7 @@
 
     div{
         width: 50%;
+
         
         // border: 1px solid black;
     }
@@ -193,15 +203,16 @@
             transition: all ease-in-out .4s;
         }
         #MADNESS{
-            @include button-change-color();
+            // @include button-change-color();
             transition: all ease-in-out .4s;
         }
 }
 .other_posts{
     @include textDec();
     margin: 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     // @include shadow();
+    min-height: 25vh;
     background-size: cover;
     background-repeat: no-repeat;
     text-overflow: ellipsis;

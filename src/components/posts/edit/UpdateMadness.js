@@ -1,3 +1,5 @@
+import "../../styles/forms/Complete.css"
+
 export const UpdateMadness = ({madness, updateMadness, handleDeleteMadness, handleEditMadness}) =>{
 
     
@@ -13,19 +15,32 @@ export const UpdateMadness = ({madness, updateMadness, handleDeleteMadness, hand
 
     return(
         <>
-        <img src="https://picsum.photos/300/400"></img>
-        <form>
-            <fieldset>
-                
-                <input type="text" id="prompt" placeholder="chosen prompt"  disabled={true} value={madness?.prompt}></input>
-                <input type="text" id="mood" placeholder="mood" disabled={true} value={madness?.emotion?.emotion}></input>
-                <input type="text" id="title" placeholder="title" onChange={controlInput} value={madness?.title}></input>
-                <input type="text" id="image" placeholder="image" onChange={controlInput} value={madness?.image}></input>
-                <input type="text" id="description" placeholder="description" onChange={controlInput} value={madness?.description}></input>
-                <button type="button" onClick={handleDeleteMadness}>Delete</button>
-                <button type="button" onClick={handleEditMadness}>Submit</button>
-            </fieldset>
-        </form>
+        <div className="complete_container">
+        <div className="complete_card_container">
+          <div
+            className="complete_finished_picture"
+            style={{ backgroundImage: `url(${madness?.image})` }}
+          ></div>
+          <div className="complete_closed_prompt">
+          <div className="complete_prompts_field">
+        <div>
+        <input type="text" id="title" placeholder="title" required onChange={controlInput} value={madness.title}></input>
+        <input type="text" id="image" placeholder="image" required onChange={controlInput} value={madness.image}></input>
+        <textarea type="text" id="description" rows="10" columns="10" required placeholder="description" onChange={controlInput} value={madness.description}></textarea>
+
+        </div>
+    </div>
+            <div className="complete_chosen_prompts" id={madness?.emotion?.emotion}>
+        <p id="prompt_text">Draw:</p>
+        <p> {madness?.prompt}</p>
+      </div>
+      <div className="complete_buttons">
+      <button type="button" onClick={handleDeleteMadness}>Delete</button>
+        <button type="button" onClick={handleEditMadness}>Submit</button>
+      </div>
+          </div>
+        </div>
+        </div>
     </>
     )
 }

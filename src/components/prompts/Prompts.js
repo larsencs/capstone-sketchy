@@ -74,11 +74,15 @@ export const Prompts = ({getLoggedInUser, prompt, show, setUpdateShow, emo}) =>{
       <div className="open_prompt_card">
         <div id="prompt_div">
           <h1>{prompt?.prompt}</h1>
+
         </div>
-        <button onClick={() => setUpdateShow(false)}>Generate</button>
+        <div id="button_div">
+          <button onClick={() => setUpdateShow(false)}>Generate</button>
           <button type="button" onClick={handleSave}>
             Save
           </button>
+          </div>
+
       </div>
     );
 }

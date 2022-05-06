@@ -141,8 +141,7 @@
   font-weight: normal;
   font-style: normal;
   word-spacing: 15px;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   z-index: 1;
   -webkit-box-shadow: 0px 0px 5px black;
           box-shadow: 0px 0px 5px black;
@@ -170,6 +169,11 @@
   cursor: pointer;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .prompts_section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,8 +188,8 @@
   -ms-flex-line-pack: none;
       align-content: none;
   max-height: 100vh;
-  overflow: auto;
-  scrollbar-width: 0;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .prompts_section h3 {
@@ -227,6 +231,7 @@
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  border: 2px solid black;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../../../../public/images/paper-four.jpg);
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../../../public/images/paper-four.jpg);
   background-size: cover;
@@ -247,6 +252,7 @@
 }
 
 .card_container {
+  border: 2px solid black;
   color: #fff;
   text-shadow: 0px 0px 5px black;
   height: 30vh;
@@ -416,16 +422,12 @@
   transition: all ease-in-out .4s;
 }
 
-.closed_prompt_btns #MADNESS:hover {
-  -webkit-box-shadow: 0px 0px 5px black, 0px 0px 10px #e100ff, 0px 0px 15px #e100ff;
-          box-shadow: 0px 0px 5px black, 0px 0px 10px #e100ff, 0px 0px 15px #e100ff;
-}
-
 .other_posts {
   color: #fff;
   text-shadow: 0px 0px 5px black;
   margin: 5px;
-  border: 1px solid black;
+  border: 2px solid black;
+  min-height: 25vh;
   background-size: cover;
   background-repeat: no-repeat;
   text-overflow: ellipsis;

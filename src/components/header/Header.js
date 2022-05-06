@@ -45,7 +45,7 @@ export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
         getUserById(getLoggedInUser())
             .then(res => {
                 const temp ={
-                    name: res[0].name
+                    name: res[0]?.name
                 }
                 updateUser(temp)
 
