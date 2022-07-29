@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react"
 import { getPostByUserId, completePost, getPostById } from "../modules/PostManager"
 import { getPromptById } from "../modules/PromptManager"
 import { useNavigate, useParams } from "react-router-dom"
-import { uploadImage } from "../api/cloudinary"
 import { Settings } from "../../Settings.js"
 import "../styles/forms/Complete.css"
 

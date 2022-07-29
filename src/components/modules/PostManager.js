@@ -21,6 +21,11 @@ export const getRecentOtherPosts = (id) =>{
         .then(res => res.json())
 }
 
+export const getOpenPosts = (id) =>{
+    return fetch(`${baseUrl}/GetOpenPosts/${id}`)
+        .then(res => res.json())
+}
+
 // TO-BE-DELETED Functions
 
 export const getPosts = () =>{

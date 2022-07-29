@@ -1,8 +1,8 @@
 import React,{useState, useEffect} from "react"
 import "../styles/header/header.css"
-import { getUserById } from "../modules/UserManager"
+import { logout } from "../modules/AuthManager"
 
-export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
+export const Header = ({getLoggedInUser, isLoggedIn}) =>{
 
   const [user, updateUser] = useState({})
     const componentArr = [
@@ -19,7 +19,7 @@ export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
 
         <div className="navbar_user_functions">
         {`Hello, ${user?.name}`}
-        <button onClick={clearUser}>Logout</button>
+        <button onClick={logout}>Logout</button>
       </div>
       </div>
 
@@ -39,22 +39,9 @@ export const Header = ({getLoggedInUser, clearUser, isAuthenticated}) =>{
   </>
     ]
 
-    
-
-    useEffect(()=>{
-        getUserById(getLoggedInUser())
-            .then(res => {
-                const temp ={
-                    name: res[0]?.name
-                }
-                updateUser(temp)
-
-            })
-    },[])
-
     return (
       <>
-        {isAuthenticated? componentArr[0] : componentArr[1]}
+        {isLoggedIn? componentArr[0] : componentArr[1]}
       </>
     );
 }

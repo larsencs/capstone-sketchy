@@ -1,21 +1,18 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import { ApplicationViews } from "./ApplicationViews"
 import { Header } from "./header/Header"
 import { NavBar } from "./navbar/NavBar"
 import { Footer } from "./footer/Footer"
 import { BrowserRouter as Router } from "react-router-dom";
+import { onLoginStatusChange } from "./modules/AuthManager"
 
-export const Sketchy = () =>{
+export const Sketchy = ({getLoggedInUser}) =>{
 
   const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   useEffect(() => {
     onLoginStatusChange(setIsLoggedIn);
   }, []);
-
-  if (isLoggedIn === null) {
-    return <Spinner className="app-spinner dark" />;
-  }
 
     // const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("sketchy_user") !== null)
 

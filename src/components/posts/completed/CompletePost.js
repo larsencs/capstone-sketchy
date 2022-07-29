@@ -3,9 +3,6 @@ import { getPostByUserId, completePost, getPostById, getMadnessById } from "../.
 import { getPromptById } from "../../modules/PromptManager"
 import { useNavigate, useParams } from "react-router-dom"
 import "../../styles/forms/Complete.css"
-import { uploadCloud } from "../../api/cloudinary"
-// import { Settings } from "../../../../Settings"
-import { uploadImage } from "../../api/cloudinary"
 import { CompleteMadness } from "./CompleteMadness"
 import { CompleteMundane } from "./CompleteMundane"
 

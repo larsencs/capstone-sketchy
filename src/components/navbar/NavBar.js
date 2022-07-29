@@ -4,7 +4,7 @@ import { getUserById } from "../modules/UserManager"
 import { useNavigate } from "react-router-dom"
 import "../styles/navbar/NavBar.css"
 
-export const NavBar = ({clearUser, getLoggedInUser, isAuthenticated}) =>{
+export const NavBar = ({getLoggedInUser, isLoggedIn}) =>{
 
     const[user, updateUser] = useState({
         name: ""
@@ -39,7 +39,7 @@ export const NavBar = ({clearUser, getLoggedInUser, isAuthenticated}) =>{
 
     return(
     <>
-        {isAuthenticated? componentArr[0] : componentArr[1]}
+        {isLoggedIn? componentArr[0] : componentArr[1]}
     </>)
 
 }
