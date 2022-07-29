@@ -150,12 +150,14 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    cursor:pointer;
 }
 
 .closed_prompt{
     @include flexCenter(column, none);
     justify-content: space-between;
     border-left: 2px solid black;
+    cursor:pointer;
 
     div{
         width: 100%;

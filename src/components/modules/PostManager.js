@@ -1,10 +1,34 @@
 const dataURL = "http://localhost:8088"
+const baseUrl = "/api/Post"
 
+export const getAllUserPosts = (id) =>{
+    return fetch(`${baseUrl}/GetAllUserPosts/${id}`)
+        .then(res => res.json())
+}
+
+export const getAllOtherPosts = (id) =>{
+    return fetch(`${baseUrl}/GetAllOtherPosts/${id}`)
+        .then(res => res.json())
+}
+
+export const getRecentUserPosts = (id) =>{
+    return fetch(`${baseUrl}/GetTopUserPosts/${id}`)
+        .then(res => res.json())
+}
+
+export const getRecentOtherPosts = (id) =>{
+    return fetch(`${baseUrl}/GetTopOtherPosts/${id}`)
+        .then(res => res.json())
+}
+
+// TO-BE-DELETED Functions
 
 export const getPosts = () =>{
     return fetch(`${dataURL}/posts?_expand=prompt&_expand=emotion`)
         .then(res =>  res.json())
 }
+
+
 
 export const savePost = (postObj) =>{
     return fetch(`${dataURL}/posts/`,{

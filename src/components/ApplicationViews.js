@@ -11,10 +11,10 @@ import { PostDashboard } from "./dashboard/PostDashboard";
 import { OtherPostDashboard } from "./dashboard/OtherPostDashboard";
 import { CompletePost } from "./posts/completed/CompletePost";
 
-export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,}) => {
+export const ApplicationViews = ({getLoggedInUser, isLoggedIn}) => {
     
     const PrivateOutlet = () => {
-      return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+      return isLoggedIn ? <Outlet /> : <Navigate to="/login" />;
     };
 
     return (
@@ -30,7 +30,7 @@ export const ApplicationViews = ({isAuthenticated, setAuthUser, getLoggedInUser,
                     <Route path="/all_posts" element={<PostDashboard getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/other_posts" element={<OtherPostDashboard getLoggedInUser={getLoggedInUser}/>}/>
                     <Route path="/:postId/complete_prompt" element={<CompletePost getLoggedInUser={getLoggedInUser}/>}/>
-                    <Route/>
+                    <Route path="*" element={<p>These are not the droids you're looking for...</p>}/>
                     <Route/>
                     <Route/>
                 </Route>

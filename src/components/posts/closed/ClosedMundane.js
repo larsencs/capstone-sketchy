@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-export const ClosedMundane = ({post, seeComments, updateSeeComments, comments}) =>{
+export const ClosedMundane = ({post, seeComments, updateSeeComments, comments, updateShowModal}) =>{
     const componentSubArr = [
         <div className="chosen_prompts" id={post?.emotion?.emotion}>
         <p id="prompt_text">Draw:</p>
@@ -19,6 +19,7 @@ export const ClosedMundane = ({post, seeComments, updateSeeComments, comments}) 
         <div className="card_container">
           <div
             className="finished_picture"
+            onClick={updateShowModal(true)}
             style={{ backgroundImage: `url(${post?.image})` }}
           ></div>
           <div className="closed_prompt">
